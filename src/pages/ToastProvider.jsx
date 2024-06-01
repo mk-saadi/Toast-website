@@ -5,10 +5,10 @@ import Hei2 from "./components/hooks/Hei2";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CustomSpan from "./components/hooks/Highlight";
-import useClipboard from "./components/hooks/useClipBoard";
 import Button from "./components/hooks/Button";
 import { useToast } from "react-toast-master";
 import ItalicText from "./components/hooks/ItalicText";
+import CodeBlock from "./components/hooks/CodeBlock";
 
 const codeString = `import React from "react";
 import ReactDOM from "react-dom/client";
@@ -29,13 +29,25 @@ import "./app.css";
 import { useToast } from "react-toast-master";
 
 export default function App() {
-	const { toastMaster } = useToast();
+	const { toastMaster, hideToast } = useToast();
 
 	const popatoast = () => {
 		toastMaster({
 			type: "infoWhite",
 			message: "toasting toast inside a toastprovider",
-			footer: <p>truly one of a kind</p>,
+			footer: (
+				<p>
+					truly one of a kind.
+					<br /> Hide the toast with{" "}
+					<span
+						onClick={hideToast}
+						className="underline cursor-pointer"
+					>
+						hideToast
+					</span>
+					.
+				</p>
+			),
 			bg: "dark",
 			cancelButton: true,
 		})
@@ -52,23 +64,29 @@ export default function App() {
 
 const importProvider = `import { ToastProvider } from "react-toast-master";`;
 
-const importUseToast = `import { UseToast } from "react-toast-master";`;
+const importUseToast = `import { UseToast, hideToast } from "react-toast-master";`;
 
 const Toast_Provider = () => {
-	const { toastMaster } = useToast();
+	const { toastMaster, hideToast } = useToast();
 	useScrollToTop();
-
-	const [isCopied, copyToClipboard] = useClipboard();
-	const handleCopy = (text) => {
-		const textToCopy = text.replace("$ ", "");
-		copyToClipboard(textToCopy);
-	};
 
 	const popatoast = () => {
 		toastMaster({
 			type: "infoWhite",
 			message: "toasting toast inside a toastprovider",
-			footer: <p>truly one of a kind</p>,
+			footer: (
+				<p>
+					truly one of a kind.
+					<br /> Hide the toast with{" "}
+					<span
+						onClick={hideToast}
+						className="underline cursor-pointer"
+					>
+						hideToast
+					</span>
+					.
+				</p>
+			),
 			bg: "dark",
 			cancelButton: true,
 		});
@@ -97,46 +115,23 @@ const Toast_Provider = () => {
 						In the <CustomSpan>main.jsx</CustomSpan> file of your project
 					</ItalicText>
 					<p>Import the ToastProvider component in main.jsx file</p>
-					<SyntaxHighlighter
-						language="javascript"
-						style={oneDark}
-						wrapLines
-						aria-label="code"
-					>
-						{importProvider}
-					</SyntaxHighlighter>
+					<CodeBlock codeString={importProvider} />
 
-					<ItalicText>Example</ItalicText>
-					<SyntaxHighlighter
-						language="javascript"
-						style={oneDark}
-						showLineNumbers
-						wrapLines
-						aria-label="code"
-					>
-						{codeString}
-					</SyntaxHighlighter>
+					<ItalicText classname={"mt-4"}>Example</ItalicText>
+					<CodeBlock codeString={codeString} />
 				</div>
 
 				<div>
-					<Hei2>Using the toast in your application</Hei2>
-					<SyntaxHighlighter
-						language="javascript"
-						style={oneDark}
-						wrapLines
-						aria-label="code"
-					>
-						{importUseToast}
-					</SyntaxHighlighter>
-					<SyntaxHighlighter
-						language="javascript"
-						style={oneDark}
-						showLineNumbers
-						wrapLines
-						aria-label="code"
-					>
-						{codeStringApp}
-					</SyntaxHighlighter>
+					<ItalicText>Using the toast in your application</ItalicText>
+					<p>
+						Import the useToast hook from useToast() and destructure{" "}
+						<CustomSpan>toastMaster</CustomSpan> and <CustomSpan>hideToast</CustomSpan>, if you
+						want to remove the toast after an action.
+					</p>
+					<CodeBlock codeString={importUseToast} />
+
+					<ItalicText classname={"mt-4"}>Example</ItalicText>
+					<CodeBlock codeString={codeStringApp} />
 					<div className="flex justify-end">
 						<Button clickAction={popatoast}>Pop the toast!</Button>
 					</div>
