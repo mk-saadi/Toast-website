@@ -17,7 +17,7 @@ const router = createBrowserRouter([
 				element: <Home />,
 			},
 			{
-				path: "/pages/toast-provider",
+				path: "/pages/toast-usage",
 				element: <Toast_Provider />,
 			},
 		],

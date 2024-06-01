@@ -8,9 +8,7 @@ import { useEffect } from "react";
 
 const Layout = () => {
 	const theme = useTheme();
-
 	const navigate = useNavigate();
-
 	useEffect(() => {
 		navigate("/pages/home");
 	}, [navigate]);
@@ -29,6 +27,7 @@ const Layout = () => {
 						className="drawer-toggle"
 					/>
 					<div className="flex flex-col items-center justify-center drawer-content">
+						{/* Navbar content here */}
 						<div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full">
 							<div className="w-full">
 								<Navbar />
@@ -40,6 +39,7 @@ const Layout = () => {
 							<Outlet />
 						</div>
 					</div>
+
 					<div className="drawer-side">
 						<label
 							htmlFor="my-drawer-2"

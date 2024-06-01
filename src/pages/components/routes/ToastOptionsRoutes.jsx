@@ -18,7 +18,7 @@ const ToastOptionsRoutes = () => {
 						border: "var(--border)",
 					}}
 				>
-					/pages/ToastProvider()
+					/pages/Toast Usage
 				</p>
 			</Link>
 

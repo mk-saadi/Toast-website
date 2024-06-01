@@ -1,9 +1,9 @@
 import { Home } from "lucide-react";
 
-const Hbreads = () => {
+const Hbreads = ({ children }) => {
 	return (
 		<div
-			className="text-sm breadcrumbs"
+			className="mb-3 text-sm breadcrumbs"
 			style={{
 				color: "var(--text-color-dark-white)",
 			}}
@@ -12,7 +12,7 @@ const Hbreads = () => {
 				<li>
 					<Home size={18} />
 				</li>
-				<li>We are already home</li>
+				<li>{children}</li>
 			</ul>
 		</div>
 	);

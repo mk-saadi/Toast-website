@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import useTheme from "./useTheme";
 import { NavLink } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 
 const SideNav = () => {
 	const theme = useTheme();
@@ -25,7 +26,7 @@ const SideNav = () => {
 			<ul className="pt-20 duration-200">
 				{[
 					["/pages/home", "Home"],
-					["/pages/toast-provider", "ToastProvider()"],
+					["/pages/toast-usage", "Toast Usage"],
 					["/toast-options", "Toast Options"],
 					["/toast-customizations", "Toast Customizations"],
 				].map(([to, text]) => (
@@ -44,9 +45,12 @@ const SideNav = () => {
 											borderEndStartRadius: "var(--borderRadius)",
 									  }
 							}
-							className="px-5 py-2.5 my-1.5 text-start flex justify-start border-0 rounded-none no-animation bg-slate-700/10"
+							className="px-5 py-2.5 my-1.5 text-start flex justify-start items-center border-none rounded-none no-animation bg-slate-700/10"
 						>
 							{text}
+							<NavLink to={to}>
+								{({ isActive }) => isActive && <ChevronRight size={18} />}
+							</NavLink>
 						</NavLink>
 					</li>
 				))}

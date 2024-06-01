@@ -1,12 +1,16 @@
 import { Copy, SquareCheck } from "lucide-react";
-import useClipboard from "../useClipBoard";
-import CustomSpan from "../hooks.jsx/Highlight";
+import useClipboard from "../hooks/useClipBoard";
+import CustomSpan from "../hooks/Highlight";
+import Hei2 from "../hooks/Hei2";
+
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+const codeString = `npm install react-toast-master`;
 
 const Installations = () => {
 	const [isCopied, copyToClipboard] = useClipboard();
 	const handleCopy = (text) => {
-		const textToCopy = text.replace("$ ", "");
-		copyToClipboard(textToCopy);
+		copyToClipboard(text);
 	};
 
 	return (
@@ -15,10 +19,8 @@ const Installations = () => {
 				color: "var(--text-color-dark-white)",
 			}}
 		>
-			<h2 className="text-2xl font-semibold uppercase">Installation with</h2>
-			<h3>
-				Install entire package with styles only <CustomSpan>under 50kb.</CustomSpan>
-			</h3>
+			<Hei2>Installation with</Hei2>
+			<h3>Install entire package with styles only under 50kb.</h3>
 			<div className="flex flex-col mt-4 gap-y-6">
 				<div className="flex flex-col gap-y-1.5">
 					<h3 className="text-lg italic font-medium">npm</h3>
@@ -71,6 +73,15 @@ const Installations = () => {
 					</div>
 				</div>
 			</div>
+
+			{/* <SyntaxHighlighter
+				language="bash"
+				style={oneDark}
+				wrapLines
+				aria-label="code"
+			>
+				{codeString}
+			</SyntaxHighlighter> */}
 		</div>
 	);
 };

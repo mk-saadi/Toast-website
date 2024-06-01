@@ -4,7 +4,7 @@ const HomeRoutes = () => {
 	return (
 		<>
 			<Link
-				to={"/pages/toast-provider"}
+				to={"/pages/toast-usage"}
 				className="flex px-6 py-2.5 flex-col justify-end bg-neutral"
 				style={{
 					color: "var(--text-color-white-white)",
@@ -18,7 +18,7 @@ const HomeRoutes = () => {
 						border: "var(--border)",
 					}}
 				>
-					/pages/ToastProvider()
+					/pages/Toast Usage
 				</p>
 			</Link>
 		</>
