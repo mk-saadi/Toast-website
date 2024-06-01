@@ -9,20 +9,7 @@ import Button from "./components/hooks/Button";
 import { useToast } from "react-toast-master";
 import ItalicText from "./components/hooks/ItalicText";
 import CodeBlock from "./components/hooks/CodeBlock";
-
-const codeString = `import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
-import { ToastProvider } from "react-toast-master";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
-		<ToastProvider>
-			<App />
-		</ToastProvider>
-	</React.StrictMode>
-);`;
+import Instructions from "./components/provider-components/Instructions";
 
 const codeStringApp = `import React from "react";
 import "./app.css";
@@ -62,8 +49,6 @@ export default function App() {
 	);
 }`;
 
-const importProvider = `import { ToastProvider } from "react-toast-master";`;
-
 const importUseToast = `import { UseToast, hideToast } from "react-toast-master";`;
 
 const Toast_Provider = () => {
@@ -100,26 +85,7 @@ const Toast_Provider = () => {
 			<Hbreads>Toast Usage</Hbreads>
 
 			<div className="flex flex-col gap-y-14">
-				<div>
-					<Hei2>Toast Usage example</Hei2>
-					<h3 className="mt-1 mb-8">
-						The <CustomSpan>ToastProvider</CustomSpan> component is essential for enabling toast
-						notifications in your application.
-						<br />
-						<br />
-						As it uses the <CustomSpan>Context API</CustomSpan>, it must be placed at the top
-						level of your component tree to ensure that toasts are accessible from any part of the
-						application.
-					</h3>
-					<ItalicText>
-						In the <CustomSpan>main.jsx</CustomSpan> file of your project
-					</ItalicText>
-					<p>Import the ToastProvider component in main.jsx file</p>
-					<CodeBlock codeString={importProvider} />
-
-					<ItalicText classname={"mt-4"}>Example</ItalicText>
-					<CodeBlock codeString={codeString} />
-				</div>
+				<Instructions />
 
 				<div>
 					<ItalicText>Using the toast in your application</ItalicText>
@@ -131,6 +97,9 @@ const Toast_Provider = () => {
 					<CodeBlock codeString={importUseToast} />
 
 					<ItalicText classname={"mt-4"}>Example</ItalicText>
+					<p>
+						Using <CustomSpan>TailwindCSS</CustomSpan> for styling footer. You may use custom css.
+					</p>
 					<CodeBlock codeString={codeStringApp} />
 					<div className="flex justify-end">
 						<Button clickAction={popatoast}>Pop the toast!</Button>

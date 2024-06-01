@@ -1,8 +1,7 @@
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useToast } from "react-toast-master";
 import Button from "../hooks/Button";
 import Hei2 from "../hooks/Hei2";
+import CodeBlock from "../hooks/CodeBlock";
 
 const codeString = `<button
 	onClick={() =>
@@ -22,15 +21,7 @@ const Hcodes = () => {
 		<>
 			<div className="overflow-hidden">
 				<Hei2>Simple Example</Hei2>
-				<SyntaxHighlighter
-					language="javascript"
-					style={oneDark}
-					showLineNumbers
-					wrapLines
-					aria-label="code"
-				>
-					{codeString}
-				</SyntaxHighlighter>
+				<CodeBlock codeString={codeString} />
 			</div>
 
 			<div className="flex justify-end">

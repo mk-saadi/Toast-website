@@ -34,7 +34,10 @@ const CopyButton = ({ textToCopy }) => {
 	};
 
 	return (
-		<p className="absolute top-2.5 right-2.5">
+		<p
+			className="absolute top-2.5 right-2.5"
+			style={{ color: "var(--text-color-white-white)" }}
+		>
 			{isCopied ? (
 				<SquareCheck
 					className="duration-200 opacity-0 group-hover:opacity-100"
