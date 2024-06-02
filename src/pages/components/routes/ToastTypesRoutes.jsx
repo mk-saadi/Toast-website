@@ -4,7 +4,7 @@ const ToastTypesRoutes = () => {
 	return (
 		<>
 			<Link
-				to={"/pages/home"}
+				to={"/pages/toast-usage"}
 				className="flex px-6 py-2.5 flex-col justify-end bg-neutral"
 				style={{
 					color: "var(--text-color-white-white)",

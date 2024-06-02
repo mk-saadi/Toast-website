@@ -12,7 +12,7 @@ const ToastProviderRoutes = () => {
 			>
 				<p>Previous</p>
 				<p
-					className="text-lg font-medium italic"
+					className="text-lg italic font-medium"
 					style={{
 						borderRadius: "var(--borderRadius)",
 						border: "var(--border)",
@@ -23,7 +23,7 @@ const ToastProviderRoutes = () => {
 			</Link>
 
 			<Link
-				to={"/pages/toast-options"}
+				to={"/pages/toast-types"}
 				className="flex px-6 py-2.5 flex-col justify-end bg-neutral"
 				style={{
 					color: "var(--text-color-white-white)",
@@ -31,13 +31,13 @@ const ToastProviderRoutes = () => {
 			>
 				<p>Next</p>
 				<p
-					className="text-lg font-medium italic"
+					className="text-lg italic font-medium"
 					style={{
 						borderRadius: "var(--borderRadius)",
 						border: "var(--border)",
 					}}
 				>
-					/pages/Toast Options
+					/pages/Toast Types
 				</p>
 			</Link>
 		</>
