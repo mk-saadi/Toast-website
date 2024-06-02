@@ -6,6 +6,8 @@ import { ToastProvider } from "react-toast-master";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Toast_Provider from "./pages/ToastProvider";
+import ToastTypes from "./pages/ToastTypes";
+import ToastCustom from "./pages/ToastCustom";
 
 const router = createBrowserRouter([
 	{
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
 			{
 				path: "/pages/toast-usage",
 				element: <Toast_Provider />,
+			},
+			{
+				path: "/pages/toast-types",
+				element: <ToastTypes />,
+			},
+			{
+				path: "/pages/toast-customizations",
+				element: <ToastCustom />,
 			},
 		],
 	},

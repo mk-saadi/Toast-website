@@ -1,10 +1,9 @@
-import ToastProviderRoutes from "./components/routes/ToastProviderRoutes";
+import React from "react";
 import useScrollToTop from "./components/hooks/useScrollToTop";
 import Hbreads from "./components/hooks/Hbreads";
-import Instructions from "./components/provider-components/Instructions";
-import Usage from "./components/provider-components/Usage";
+import ToastCustomRoutes from "./components/routes/ToastCustomRoutes";
 
-const Toast_Provider = () => {
+const ToastCustom = () => {
 	useScrollToTop();
 
 	return (
@@ -12,19 +11,15 @@ const Toast_Provider = () => {
 			className="flex flex-col min-h-screen"
 			style={{ color: "var(--text-color-dark-white)" }}
 		>
-			<Hbreads>Toast Usage</Hbreads>
+			<Hbreads>Toast Customizations</Hbreads>
 
 			<div className="flex flex-col gap-y-14">
-				<Instructions />
-
-				<Usage />
-
 				<div className="flex justify-between w-full">
-					<ToastProviderRoutes />
+					<ToastCustomRoutes />
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Toast_Provider;
+export default ToastCustom;

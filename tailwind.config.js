@@ -44,7 +44,7 @@ export default {
 					success: "#addfad",
 					warning: "#f1c891",
 					error: "#ffbbbd",
-					"--ghost": "#6d737a5c",
+					"--ghost": "#1b262c",
 					"--text-white": "#ffffff",
 					"--text-color-white-white": "#9fb9d0",
 					"--text-color-dark-dark": "#2e3440",

@@ -27,8 +27,8 @@ const SideNav = () => {
 				{[
 					["/pages/home", "Home"],
 					["/pages/toast-usage", "Toast Usage"],
-					["/toast-options", "Toast Options"],
-					["/toast-customizations", "Toast Customizations"],
+					["/pages/toast-types", "Toast Types"],
+					["/pages/toast-customizations", "Toast Customizations"],
 				].map(([to, text]) => (
 					<li
 						key={to}

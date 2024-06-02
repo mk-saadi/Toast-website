@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ToastOptionsRoutes = () => {
+const ToastTypesRoutes = () => {
 	return (
 		<>
 			<Link
@@ -12,7 +12,7 @@ const ToastOptionsRoutes = () => {
 			>
 				<p>Previous</p>
 				<p
-					className="text-lg font-medium italic"
+					className="text-lg italic font-medium"
 					style={{
 						borderRadius: "var(--borderRadius)",
 						border: "var(--border)",
@@ -31,7 +31,7 @@ const ToastOptionsRoutes = () => {
 			>
 				<p>Next</p>
 				<p
-					className="text-lg font-medium italic"
+					className="text-lg italic font-medium"
 					style={{
 						borderRadius: "var(--borderRadius)",
 						border: "var(--border)",
@@ -44,4 +44,4 @@ const ToastOptionsRoutes = () => {
 	);
 };
 
-export default ToastOptionsRoutes;
+export default ToastTypesRoutes;
