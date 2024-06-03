@@ -35,7 +35,7 @@ const Layout = () => {
 						</div>
 
 						{/* Page content here */}
-						<div className="w-full pl-8 mt-20 mb-14">
+						<div className="w-full mt-24 lg:mt-20 px-2.5 lg:pl-8 mb-14">
 							<Outlet />
 						</div>
 					</div>
@@ -46,7 +46,7 @@ const Layout = () => {
 							aria-label="close sidebar"
 							className="drawer-overlay"
 						></label>
-						<div className="h-[100vh] overflow-hidden menu w-60 p-0 m-0">
+						<div className="h-[100vh] overflow-hidden menu w-72 p-0 m-0">
 							{/* Sidebar content here */}
 							<SideNav />
 						</div>

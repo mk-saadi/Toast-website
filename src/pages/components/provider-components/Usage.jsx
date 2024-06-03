@@ -70,6 +70,7 @@ const Usage = () => {
 			align: "left",
 		});
 	};
+
 	return (
 		<div>
 			<ItalicText>Using the toast in your application</ItalicText>

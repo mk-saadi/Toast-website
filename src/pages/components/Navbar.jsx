@@ -1,3 +1,4 @@
+import { AlignJustify } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
@@ -19,14 +20,17 @@ const Navbar = () => {
 			}}
 		>
 			<div className="flex justify-between">
-				<label
-					htmlFor="my-drawer-2"
-					className="btn btn-primary drawer-button lg:hidden"
-				>
-					Open drawer
-				</label>
-				<div className="text-xl font-bold">R-T-M</div>
-				<div className="flex flex-row items-center justify-start font-normal gap-x-4">
+				<div className="flex flex-row items-center justify-start gap-x-4 lg:gap-x-0">
+					<label
+						htmlFor="my-drawer-2"
+						className="lg:hidden"
+					>
+						<AlignJustify />
+					</label>
+
+					<div className="text-xl font-bold">R-T-M</div>
+				</div>
+				<div className="flex flex-row items-center justify-between font-normal gap-x-4">
 					{/* theme switcher */}
 					<label className="swap swap-rotate">
 						<input

@@ -1,45 +1,18 @@
-import { Link } from "react-router-dom";
+import NavigationLink from "../hooks/NavigationLink";
 
 const ToastTypesRoutes = () => {
 	return (
 		<>
-			<Link
+			<NavigationLink
 				to={"/pages/toast-usage"}
-				className="flex px-6 py-2.5 flex-col justify-end bg-neutral"
-				style={{
-					color: "var(--text-color-white-white)",
-				}}
-			>
-				<p>Previous</p>
-				<p
-					className="text-lg italic font-medium"
-					style={{
-						borderRadius: "var(--borderRadius)",
-						border: "var(--border)",
-					}}
-				>
-					/pages/Toast Usage
-				</p>
-			</Link>
-
-			<Link
+				routeName={"/pages/Toast Usage"}
+				direction={"Previous"}
+			/>
+			<NavigationLink
 				to={"/pages/toast-customizations"}
-				className="flex px-6 py-2.5 flex-col justify-end bg-neutral"
-				style={{
-					color: "var(--text-color-white-white)",
-				}}
-			>
-				<p>Next</p>
-				<p
-					className="text-lg italic font-medium"
-					style={{
-						borderRadius: "var(--borderRadius)",
-						border: "var(--border)",
-					}}
-				>
-					/pages/Toast Customizations
-				</p>
-			</Link>
+				routeName={"/pages/Toast Customizations"}
+				direction={"Next"}
+			/>
 		</>
 	);
 };

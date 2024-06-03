@@ -2,12 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: "Montserrat", sans-serif;
 	position: relative;
 	/* background: rgb(186, 76, 172); */
 	background: linear-gradient(125deg, #e0eafc, #cfdef3 100%);
-	/* border-start */
+}
+
+.offset-anchor {
+	position: relative;
+	top: -40px;
+	padding-top: 40px;
 }
 
 /* body::before {
