@@ -19,7 +19,7 @@ const Layout = () => {
 				"bg-base-100": theme === "sunset" || theme === "nord",
 			})}
 		>
-			<div className="max-w-5xl mx-auto">
+			<div className="mx-auto md:max-w-3xl sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl">
 				<div className="drawer lg:drawer-open">
 					<input
 						id="my-drawer-2"

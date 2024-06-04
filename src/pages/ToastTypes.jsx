@@ -3,8 +3,15 @@ import Hbreads from "./components/hooks/Hbreads";
 import Hei2 from "./components/hooks/Hei2";
 import useScrollToTop from "./components/hooks/useScrollToTop";
 import ToastTypesRoutes from "./components/routes/ToastTypesRoutes";
+import ItalicText from "./components/hooks/ItalicText";
+import CustomSpan from "./components/hooks/Highlight";
+import CodeBlock from "./components/hooks/CodeBlock";
+import Button from "./components/hooks/Button";
+import { useToast } from "react-toast-master";
+import Success from "./components/type-components/Success";
 
 const ToastTypes = () => {
+	const { toastMaster } = useToast();
 	useScrollToTop();
 
 	useEffect(() => {
@@ -37,29 +44,29 @@ const ToastTypes = () => {
 					<Hei2>All Toast Types</Hei2>
 
 					<p>Types of Toast available in the Toast package:</p>
-					<ul className="ml-8 w-fit">
+					<ul className="ml-4 w-fit">
 						<li className="flex items-center justify-start gap-x-1 group">
-							- <span className="ml-1.5 duration-200 opacity-0 group-hover:opacity-100">#</span>
+							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
 							<a href="#success">Success</a>
 						</li>
 						<li className="flex items-center justify-start gap-x-1 group">
-							- <span className="ml-1.5 duration-200 opacity-0 group-hover:opacity-100">#</span>
+							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
 							<a href="#error">Error</a>
 						</li>
 						<li className="flex items-center justify-start gap-x-1 group">
-							- <span className="ml-1.5 duration-200 opacity-0 group-hover:opacity-100">#</span>
+							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
 							<a href="#info">Info</a>
 						</li>
 						<li className="flex items-center justify-start gap-x-1 group">
-							- <span className="ml-1.5 duration-200 opacity-0 group-hover:opacity-100">#</span>
+							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
 							<a href="#warning">Warning</a>
 						</li>
 						<li className="flex items-center justify-start gap-x-1 group">
-							- <span className="ml-1.5 duration-200 opacity-0 group-hover:opacity-100">#</span>
+							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
 							<a href="#basic">Basic</a>
 						</li>
 						<li className="flex items-center justify-start gap-x-1 group">
-							- <span className="ml-1.5 duration-200 opacity-0 group-hover:opacity-100">#</span>
+							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
 							<a href="#confirm">Confirm</a>
 						</li>
 					</ul>
@@ -70,15 +77,14 @@ const ToastTypes = () => {
 						className="offset-anchor"
 						id="success"
 					>
-						<Hei2>Toast Type: Success</Hei2>
-						{/* Content for Success Toast */}
+						<Success />
 					</div>
 
 					<div
 						className="offset-anchor"
 						id="error"
 					>
-						<Hei2>Toast Type: Error</Hei2>
+						<ItalicText>Toast Type: Error</ItalicText>
 						{/* Content for Error Toast */}
 					</div>
 
@@ -86,7 +92,7 @@ const ToastTypes = () => {
 						className="offset-anchor"
 						id="info"
 					>
-						<Hei2>Toast Type: Info</Hei2>
+						<ItalicText>Toast Type: Info</ItalicText>
 						{/* Content for Info Toast */}
 					</div>
 
@@ -94,7 +100,7 @@ const ToastTypes = () => {
 						className="offset-anchor"
 						id="warning"
 					>
-						<Hei2>Toast Type: Warning</Hei2>
+						<ItalicText>Toast Type: Warning</ItalicText>
 						{/* Content for Warning Toast */}
 					</div>
 
@@ -102,7 +108,7 @@ const ToastTypes = () => {
 						className="offset-anchor"
 						id="basic"
 					>
-						<Hei2>Toast Type: Basic</Hei2>
+						<ItalicText>Toast Type: Basic</ItalicText>
 						{/* Content for Basic Toast */}
 					</div>
 
@@ -110,7 +116,7 @@ const ToastTypes = () => {
 						className="offset-anchor mb-96"
 						id="confirm"
 					>
-						<Hei2>Toast Type: Confirm</Hei2>
+						<ItalicText>Toast Type: Confirm</ItalicText>
 						{/* Content for Confirm Toast */}
 					</div>
 				</div>

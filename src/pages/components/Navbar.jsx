@@ -21,11 +21,27 @@ const Navbar = () => {
 		>
 			<div className="flex justify-between">
 				<div className="flex flex-row items-center justify-start gap-x-4 lg:gap-x-0">
-					<label
+					{/* <label
 						htmlFor="my-drawer-2"
 						className="lg:hidden"
 					>
 						<AlignJustify />
+					</label> */}
+					<label
+						className="hamburger lg:hidden"
+						htmlFor="my-drawer-2"
+					>
+						<input type="checkbox" />
+						<svg viewBox="0 0 32 32">
+							<path
+								className="line line-top-bottom"
+								d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+							></path>
+							<path
+								className="line"
+								d="M7 16 27 16"
+							></path>
+						</svg>
 					</label>
 
 					<div className="text-xl font-bold">R-T-M</div>
@@ -40,18 +56,16 @@ const Navbar = () => {
 							value="theme"
 						/>
 
-						{/* moon icon */}
 						<svg
-							className="w-6 h-6 fill-current swap-on"
+							className="w-6 h-6 fill-current swap-on" // moon icon
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 						>
 							<path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
 						</svg>
 
-						{/* sun icon */}
 						<svg
-							className="w-6 h-6 fill-current swap-off"
+							className="w-6 h-6 fill-current swap-off" // sun icon
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 						>

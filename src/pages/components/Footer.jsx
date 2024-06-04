@@ -10,7 +10,7 @@ const Footer = () => {
 				backgroundColor: "var(--default)",
 			}}
 		>
-			<h2>Copyright © {currentYear} mk-saadi/Muhiuddin_Khaled</h2>
+			<h2>Copyright © {currentYear} mk-saadi / Muhiuddin_Khaled</h2>
 		</div>
 	);
 };
