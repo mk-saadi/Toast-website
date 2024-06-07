@@ -40,7 +40,7 @@ const CopyButton = ({ textToCopy }) => {
 		>
 			{isCopied ? (
 				<SquareCheck
-					className="duration-200 opacity-0 group-hover:opacity-100"
+					className="duration-200 opacity-0 cursor-none group-hover:opacity-100"
 					size={22}
 				/>
 			) : (

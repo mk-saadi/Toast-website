@@ -1,14 +1,10 @@
 import { Copy, SquareCheck } from "lucide-react";
 import useClipboard from "../hooks/useClipBoard";
-import CustomSpan from "../hooks/Highlight";
 import Hei2 from "../hooks/Hei2";
-
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-const codeString = `npm install react-toast-master`;
 
 const Installations = () => {
 	const [isCopied, copyToClipboard] = useClipboard();
+
 	const handleCopy = (text) => {
 		copyToClipboard(text);
 	};
@@ -42,7 +38,7 @@ const Installations = () => {
 							<Copy
 								className="duration-200 opacity-0 cursor-pointer group-hover:opacity-100"
 								size={20}
-								onClick={() => handleCopy("$ npm i react-toast-master")}
+								onClick={() => handleCopy("npm i react-toast-master")}
 							/>
 						)}
 					</div>
@@ -67,7 +63,7 @@ const Installations = () => {
 							<Copy
 								className="duration-200 opacity-0 cursor-pointer group-hover:opacity-100"
 								size={20}
-								onClick={() => handleCopy("$ yarn add react-toast-master")}
+								onClick={() => handleCopy("yarn add react-toast-master")}
 							/>
 						)}
 					</div>

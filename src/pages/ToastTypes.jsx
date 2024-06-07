@@ -7,11 +7,9 @@ import ItalicText from "./components/hooks/ItalicText";
 import CustomSpan from "./components/hooks/Highlight";
 import CodeBlock from "./components/hooks/CodeBlock";
 import Button from "./components/hooks/Button";
-import { useToast } from "react-toast-master";
-import Success from "./components/type-components/Success";
+import TypeExample from "./components/type-components/TypeExample";
 
 const ToastTypes = () => {
-	const { toastMaster } = useToast();
 	useScrollToTop();
 
 	useEffect(() => {
@@ -73,6 +71,12 @@ const ToastTypes = () => {
 				</div>
 
 				<div>
+					<ItalicText>Example</ItalicText>
+
+					<TypeExample />
+				</div>
+
+				{/* <div>
 					<div
 						className="offset-anchor"
 						id="success"
@@ -85,7 +89,6 @@ const ToastTypes = () => {
 						id="error"
 					>
 						<ItalicText>Toast Type: Error</ItalicText>
-						{/* Content for Error Toast */}
 					</div>
 
 					<div
@@ -93,7 +96,6 @@ const ToastTypes = () => {
 						id="info"
 					>
 						<ItalicText>Toast Type: Info</ItalicText>
-						{/* Content for Info Toast */}
 					</div>
 
 					<div
@@ -101,7 +103,6 @@ const ToastTypes = () => {
 						id="warning"
 					>
 						<ItalicText>Toast Type: Warning</ItalicText>
-						{/* Content for Warning Toast */}
 					</div>
 
 					<div
@@ -109,7 +110,6 @@ const ToastTypes = () => {
 						id="basic"
 					>
 						<ItalicText>Toast Type: Basic</ItalicText>
-						{/* Content for Basic Toast */}
 					</div>
 
 					<div
@@ -117,9 +117,8 @@ const ToastTypes = () => {
 						id="confirm"
 					>
 						<ItalicText>Toast Type: Confirm</ItalicText>
-						{/* Content for Confirm Toast */}
 					</div>
-				</div>
+				</div> */}
 
 				<div className="flex justify-between w-full">
 					<ToastTypesRoutes />

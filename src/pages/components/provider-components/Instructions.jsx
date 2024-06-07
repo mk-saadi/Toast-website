@@ -21,7 +21,7 @@ const importProvider = `import { ToastProvider } from "react-toast-master";`;
 const Instructions = () => {
 	return (
 		<div>
-			<Hei2>Toast Usage Instructions</Hei2>
+			<Hei2>Toast Setup Instructions</Hei2>
 			<h3 className="mt-1 mb-8">
 				The <CustomSpan>ToastProvider</CustomSpan> component is essential for enabling toast
 				notifications in your application.

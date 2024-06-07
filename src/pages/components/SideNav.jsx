@@ -1,11 +1,7 @@
-import classNames from "classnames";
-import useTheme from "./useTheme";
 import { NavLink } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 
 const SideNav = () => {
-	const theme = useTheme();
-
 	const activeStyle = {
 		backgroundColor: "var(--primary)",
 		color: "var(--text-white)",
@@ -15,9 +11,7 @@ const SideNav = () => {
 
 	return (
 		<div
-			className={classNames("h-full", {
-				"bg-base-100": theme === "nord" || theme === "sunset",
-			})}
+			className="h-full bg-base-100"
 			style={{
 				color: "var(--text-color-white-white)",
 				borderRight: "2px solid var(--default)",
@@ -25,8 +19,8 @@ const SideNav = () => {
 		>
 			<ul className="pt-20 duration-200">
 				{[
-					["/pages/home", "Home"],
-					["/pages/toast-usage", "Toast Usage"],
+					["/pages/introduction", "Introduction"],
+					["/pages/toast-setup", "Toast Setup"],
 					["/pages/toast-types", "Toast Types"],
 					["/pages/toast-customizations", "Toast Customizations"],
 				].map(([to, text]) => (
@@ -45,7 +39,7 @@ const SideNav = () => {
 											borderEndStartRadius: "var(--borderRadius)",
 									  }
 							}
-							className="px-5 py-2.5 my-1.5 text-start flex justify-start items-center border-none rounded-none no-animation bg-slate-700/10"
+							className="px-5 py-2.5 my-1 text-start flex justify-start items-center border-none rounded-none no-animation bg-slate-700/10"
 						>
 							{text}
 							<NavLink to={to}>

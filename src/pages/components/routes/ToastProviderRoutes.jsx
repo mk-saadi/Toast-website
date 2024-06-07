@@ -5,8 +5,8 @@ const ToastProviderRoutes = () => {
 		<>
 			<NavigationLink
 				direction={"Previous"}
-				to={"/pages/home"}
-				routeName={"/pages/Home"}
+				to={"/pages/introduction"}
+				routeName={"/pages/introduction"}
 			/>
 			<NavigationLink
 				direction={"Next"}

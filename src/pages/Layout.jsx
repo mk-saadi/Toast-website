@@ -10,7 +10,7 @@ const Layout = () => {
 	const theme = useTheme();
 	const navigate = useNavigate();
 	useEffect(() => {
-		navigate("/pages/home");
+		navigate("/pages/introduction");
 	}, [navigate]);
 
 	return (

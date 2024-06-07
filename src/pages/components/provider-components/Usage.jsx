@@ -43,7 +43,7 @@ export default function App() {
 	);
 }`;
 
-const importUseToast = `import { UseToast, hideToast } from "react-toast-master";`;
+const importUseToast = `import { UseToast } from "react-toast-master";`;
 
 const Usage = () => {
 	const { toastMaster, hideToast } = useToast();
@@ -75,8 +75,9 @@ const Usage = () => {
 		<div>
 			<ItalicText>Using the toast in your application</ItalicText>
 			<p>
-				Import the useToast hook from useToast() and destructure <CustomSpan>toastMaster</CustomSpan>{" "}
-				and <CustomSpan>hideToast</CustomSpan>, if you want to remove the toast after an action.
+				Import the useToast() hook from "react-toast-master" and destructure{" "}
+				<CustomSpan>toastMaster</CustomSpan> and <CustomSpan>hideToast</CustomSpan>, if you want to
+				remove the toast after an action.
 			</p>
 			<CodeBlock codeString={importUseToast} />
 

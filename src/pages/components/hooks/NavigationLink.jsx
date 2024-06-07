@@ -9,6 +9,7 @@ const NavigationLink = ({ direction, to, routeName }) => {
 			className="flex flex-col justify-start px-6 py-2 bg-neutral"
 			style={{
 				color: "var(--text-color-white-white)",
+				borderRadius: "var(--borderRadius)",
 			}}
 		>
 			<p>{direction}</p>

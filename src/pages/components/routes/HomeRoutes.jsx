@@ -4,7 +4,7 @@ const HomeRoutes = () => {
 	return (
 		<NavigationLink
 			to={"/pages/toast-usage"}
-			routeName={"Toast Usage"}
+			routeName={"/pages/Toast Usage"}
 			direction={"Next"}
 		/>
 	);

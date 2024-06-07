@@ -1,10 +1,11 @@
-const Button = ({ children, clickAction }) => {
+const Button = ({ children, clickAction, classname, type }) => {
 	return (
 		<>
 			<button
 				style={{ color: "var(--text-white)", borderRadius: "var(--borderRadius)" }}
-				className="w-fit px-6 py-2.5 mt-2 duration-200 rounded-none bg-primary active:scale-[.97] font-medium"
+				className={`text-base w-fit px-4 py-1.5 mt-2 duration-200 rounded-none bg-primary font-medium ${classname} active:scale-[0.97] duration-200`}
 				onClick={clickAction}
+				type={type}
 			>
 				{children}
 			</button>

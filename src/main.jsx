@@ -15,11 +15,11 @@ const router = createBrowserRouter([
 		element: <Layout />,
 		children: [
 			{
-				path: "/pages/home",
+				path: "/pages/introduction",
 				element: <Home />,
 			},
 			{
-				path: "/pages/toast-usage",
+				path: "/pages/toast-setup",
 				element: <Toast_Provider />,
 			},
 			{

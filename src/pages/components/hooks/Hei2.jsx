@@ -1,9 +1,9 @@
 import React from "react";
 
-const Hei2 = ({ children }) => {
+const Hei2 = ({ children, classname }) => {
 	return (
 		<p
-			className="text-2xl font-semibold uppercase"
+			className={`text-2xl font-semibold uppercase ${classname}`}
 			style={{
 				color: "var(--text-color-dark-white)",
 			}}
