@@ -2,19 +2,19 @@ import { useToast } from "react-toast-master";
 import ItalicText from "../hooks/ItalicText";
 import CustomSpan from "../hooks/Highlight";
 import Hei2 from "../hooks/Hei2";
-import { RadioGroup } from "@headlessui/react";
 import { useState } from "react";
 import Button from "../hooks/Button";
+import RadioGroupComponent from "../hooks/RadioComponent";
 
 const toastType = [
-	{ type: "success", message: "Code compiled successfully." },
-	{ type: "error", message: "Error at code 143." },
-	{ type: "info", message: "You have a dentist appointment tomorrow at 9:30 am." },
-	{ type: "warning", message: "Couldn't compile code. See error" },
-	{ type: "loading", message: "Loading happiness." },
-	{ type: "basic", message: "Just another Tuesday." },
+	{ name: "success", message: "Code compiled successfully." },
+	{ name: "error", message: "Error at code 143." },
+	{ name: "info", message: "You have a dentist appointment tomorrow at 9:30 am." },
+	{ name: "warning", message: "Couldn't compile code. See error" },
+	{ name: "loading", message: "Loading happiness." },
+	{ name: "basic", message: "Just another Tuesday." },
 	{
-		type: "confirm",
+		name: "confirm",
 		message: "Are you sure you want to delete your enemies?",
 		align: "left",
 	},
@@ -32,7 +32,7 @@ const ToastColor = () => {
 	const [selected, setSelected] = useState(toastType[0]);
 	const [selectedColor, setSelectedColor] = useState(toastColor[0]);
 
-	const types = selected.type;
+	const types = selected.name;
 	const message = selected.message;
 	const color = selectedColor.color;
 
@@ -66,112 +66,20 @@ const ToastColor = () => {
 			>
 				<div className="flex flex-row gap-x-8">
 					{/* toast default */}
-					<div className="overflow-hidden w-fit">
-						<label
-							className="block text-base font-semibold leading-6"
-							style={{ color: "var(--text-color-dark-white)" }}
-						>
-							Select a toast Type.
-						</label>
-						<div className="w-full mx-auto mt-2">
-							<RadioGroup
-								value={selected}
-								onChange={setSelected}
-							>
-								<RadioGroup.Label className="sr-only">toast type</RadioGroup.Label>
-								<div className="grid w-full grid-cols-2 grid-rows-4 gap-2">
-									{toastType.map((plan) => (
-										<RadioGroup.Option
-											key={plan.type}
-											value={plan}
-											className={({ checked }) =>
-												`${checked ? "bg-accent" : " bg-slate-700/10"}
-                                                relative flex cursor-pointer px-2 w-fit outline-none`
-											}
-											style={{
-												borderRadius: "var(--borderRadius)",
-												border: "1px solid var(--border-gray)",
-											}}
-										>
-											{({ checked }) => (
-												<>
-													<div className="flex items-center justify-between w-full">
-														<div className="flex items-center">
-															<RadioGroup.Label
-																as="p"
-																className="font-medium"
-																style={{
-																	color: checked
-																		? "var(--text-color-dark-dark)"
-																		: "var(--text-color-dark-white)",
-																}}
-															>
-																{plan.type}
-															</RadioGroup.Label>
-														</div>
-													</div>
-												</>
-											)}
-										</RadioGroup.Option>
-									))}
-								</div>
-							</RadioGroup>
-						</div>
-					</div>
+					<RadioGroupComponent
+						labelText="Select a toast Type."
+						radioValue={selected}
+						setRadioValue={setSelected}
+						options={toastType}
+					/>
 
 					{/* toast color */}
-					<div className="overflow-hidden w-fit">
-						<label
-							className="block text-base font-semibold leading-6"
-							style={{ color: "var(--text-color-dark-white)" }}
-						>
-							Select a toast Color.
-						</label>
-						<div className="w-full mx-auto mt-2">
-							<RadioGroup
-								value={selectedColor}
-								onChange={setSelectedColor}
-							>
-								<RadioGroup.Label className="sr-only">toast color</RadioGroup.Label>
-								<div className="flex flex-col flex-wrap w-full gap-y-2">
-									{toastColor.map((plan) => (
-										<RadioGroup.Option
-											key={plan.name}
-											value={plan}
-											className={({ checked }) =>
-												`${checked ? "bg-accent" : " bg-slate-700/10"}
-                                                relative flex cursor-pointer px-2 w-fit outline-none`
-											}
-											style={{
-												borderRadius: "var(--borderRadius)",
-												border: "1px solid var(--border-gray)",
-											}}
-										>
-											{({ checked }) => (
-												<>
-													<div className="flex items-center justify-between w-full">
-														<div className="flex items-center">
-															<RadioGroup.Label
-																as="p"
-																className="font-medium"
-																style={{
-																	color: checked
-																		? "var(--text-color-dark-dark)"
-																		: "var(--text-color-dark-white)",
-																}}
-															>
-																{plan.name}
-															</RadioGroup.Label>
-														</div>
-													</div>
-												</>
-											)}
-										</RadioGroup.Option>
-									))}
-								</div>
-							</RadioGroup>
-						</div>
-					</div>
+					<RadioGroupComponent
+						labelText="Select a toast Color."
+						radioValue={selectedColor}
+						setRadioValue={setSelectedColor}
+						options={toastColor}
+					/>
 				</div>
 
 				<p className="max-w-prose">
