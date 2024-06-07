@@ -2,6 +2,7 @@ import { useToast } from "react-toast-master";
 import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import HideButton from "../hooks/HideButton";
+import Button from "../hooks/Button";
 
 const toastType = [
 	{ type: "success", name: "success", message: "Code compiled successfully." },
@@ -73,7 +74,7 @@ const TypeExample = () => {
 										key={plan.type}
 										value={plan}
 										className={({ checked }) =>
-											`${checked ? "bg-primary" : " bg-slate-700/10"}
+											`${checked ? "bg-accent" : " bg-slate-700/10"}
                                                 relative flex cursor-pointer px-2 w-fit outline-none`
 										}
 										style={{
@@ -87,9 +88,12 @@ const TypeExample = () => {
 													<div className="flex items-center">
 														<RadioGroup.Label
 															as="p"
-															className={`font-medium  ${
-																checked ? "text-white" : "text-default"
-															}`}
+															className="font-medium"
+															style={{
+																color: checked
+																	? "var(--text-color-dark-dark)"
+																	: "var(--text-color-dark-white)",
+															}}
 														>
 															{plan.name}
 														</RadioGroup.Label>
@@ -104,16 +108,19 @@ const TypeExample = () => {
 					</div>
 				</div>
 
-				<div className="flex items-center justify-end w-full mt-4 gap-x-4">
-					<input
-						type="submit"
-						value="Pop"
-						style={{ color: "var(--text-white)", borderRadius: "var(--borderRadius)" }}
-						className="w-fit text-base px-4 py-1.5 cursor-pointer duration-200 rounded-none bg-primary active:scale-[.95] font-medium"
-					/>
-				</div>
+				<Button
+					classname={"w-full"}
+					type={"submit"}
+				>
+					Pop
+				</Button>
 			</form>
-			<HideButton clickAction={hideToast}>Hide</HideButton>
+			<HideButton
+				classname={"w-full mt-2"}
+				clickAction={hideToast}
+			>
+				Hide
+			</HideButton>
 		</>
 	);
 };

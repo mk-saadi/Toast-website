@@ -82,7 +82,7 @@ const Background = () => {
 											key={plan.bg}
 											value={plan}
 											className={({ checked }) =>
-												`${checked ? "bg-primary" : " bg-slate-700/10"}
+												`${checked ? "bg-accent" : " bg-slate-700/10"}
                                                 relative flex cursor-pointer px-2 w-fit outline-none`
 											}
 											style={{
@@ -96,9 +96,12 @@ const Background = () => {
 														<div className="flex items-center">
 															<RadioGroup.Label
 																as="p"
-																className={`font-medium lowercase  ${
-																	checked ? "text-white" : "text-default"
-																}`}
+																className="font-medium lowercase"
+																style={{
+																	color: checked
+																		? "var(--text-color-dark-dark)"
+																		: "var(--text-color-dark-white)",
+																}}
 															>
 																{plan.name}
 															</RadioGroup.Label>
@@ -133,7 +136,7 @@ const Background = () => {
 											key={plan.name}
 											value={plan}
 											className={({ checked }) =>
-												`${checked ? "bg-primary" : " bg-slate-700/10"}
+												`${checked ? "bg-accent" : " bg-slate-700/10"}
                                                 relative flex cursor-pointer px-2 w-fit outline-none`
 											}
 											style={{
@@ -147,9 +150,12 @@ const Background = () => {
 														<div className="flex items-center">
 															<RadioGroup.Label
 																as="p"
-																className={`font-medium  ${
-																	checked ? "text-white" : "text-default"
-																}`}
+																className="font-medium"
+																style={{
+																	color: checked
+																		? "var(--text-color-dark-dark)"
+																		: "var(--text-color-dark-white)",
+																}}
 															>
 																{plan.name}
 															</RadioGroup.Label>

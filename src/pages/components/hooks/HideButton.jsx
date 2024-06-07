@@ -1,9 +1,9 @@
-const HideButton = ({ children, clickAction }) => {
+const HideButton = ({ children, clickAction, classname }) => {
 	return (
 		<>
 			<button
-				style={{ color: "var(--text-color-dark-white)", borderRadius: "var(--borderRadius)" }}
-				className="text-base w-fit px-[15px] py-[5px] duration-200 rounded-none outline outline-1 outline-primary hover:bg-primary font-medium active:scale-[0.97]"
+				style={{ color: "var(--text-color-dark-white2)", borderRadius: "var(--borderRadius)" }}
+				className={`text-base w-fit px-[15px] py-[5px] duration-200 rounded-none outline outline-1 outline-error hover:bg-error font-medium active:scale-[0.97] ${classname}`}
 				onClick={clickAction}
 			>
 				{children}
