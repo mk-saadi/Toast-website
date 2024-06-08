@@ -8,6 +8,8 @@ import Layout from "./pages/Layout";
 import Toast_Provider from "./pages/ToastProvider";
 import ToastTypes from "./pages/ToastTypes";
 import ToastCustom from "./pages/ToastCustom";
+import Toasts from "./pages/components/Toasts";
+import { ThemeProvider } from "./pages/ThemeProvider";
 
 const router = createBrowserRouter([
 	{
@@ -32,14 +34,20 @@ const router = createBrowserRouter([
 			},
 		],
 	},
+	{
+		path: "toasts",
+		element: <Toasts />,
+	},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<ToastProvider>
-			<div className="flex flex-col min-h-screen">
-				<RouterProvider router={router} />
-			</div>
+			<ThemeProvider>
+				<div className="flex flex-col min-h-screen">
+					<RouterProvider router={router} />
+				</div>
+			</ThemeProvider>
 		</ToastProvider>
 	</React.StrictMode>
 );

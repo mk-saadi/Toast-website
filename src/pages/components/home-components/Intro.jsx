@@ -1,5 +1,5 @@
+import { useTheme } from "../../ThemeProvider";
 import Hei2 from "../hooks/Hei2";
-import useTheme from "../useTheme";
 import classNames from "classnames";
 
 const Intro = () => {

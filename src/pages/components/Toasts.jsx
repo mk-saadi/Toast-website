@@ -2,6 +2,7 @@ import { useToast } from "react-toast-master";
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { useTheme } from "../ThemeProvider";
 
 const codeString = `
     <button
@@ -29,28 +30,18 @@ const codeString = `
     </button>`;
 
 const Toasts = () => {
+	const { theme } = useTheme();
 	const { toastMaster } = useToast();
 
-	const [copied, setCopied] = useState(false);
+	const toastType = theme === "nord" ? "successDark" : "successWhite";
+	const toastBg = theme === "nord" ? "white" : "dark";
 
-	const handleCopy = () => {
-		navigator.clipboard
-			.writeText(codeString)
-			.then(() => {
-				setCopied(true);
-				setTimeout(() => setCopied(false), 3000); // Reset copied state after 2 seconds
-				textCopied(); // Call textCopied after successful copy
-			})
-			.catch((err) => {
-				console.error("Failed to copy code:", err);
-			});
-	};
-
-	const textCopied = () => {
+	// Function to show toast
+	const showToast = () => {
 		toastMaster({
-			type: "successWhite",
+			type: toastType,
 			message: "Copied!",
-			bg: "dark",
+			bg: toastBg,
 			position: "topFull",
 			radius: "none",
 			transition: "down",
@@ -59,32 +50,7 @@ const Toasts = () => {
 
 	return (
 		<div>
-			<div className="my-12 ">
-				<div className="bg_glass w-[600px]">
-					<div className="flex flex-col rounded-2xl ">
-						<div className="flex justify-end px-3 text-white bg-gray-800">
-							<button
-								onClick={handleCopy}
-								className={`copy-button ${copied ? "copied" : ""}`}
-							>
-								{copied ? "Copied!" : "Copy"}
-							</button>
-						</div>
-
-						<div className="rounded-b-xl">
-							<SyntaxHighlighter
-								language="javascript"
-								style={gruvboxDark}
-								showLineNumbers
-								wrapLines
-								aria-label="code"
-							>
-								{codeString}
-							</SyntaxHighlighter>
-						</div>
-					</div>
-				</div>
-			</div>
+			<button onClick={showToast}>Show Toast</button>
 		</div>
 	);
 };

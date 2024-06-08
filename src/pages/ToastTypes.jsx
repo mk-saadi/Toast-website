@@ -8,6 +8,7 @@ import CustomSpan from "./components/hooks/Highlight";
 import CodeBlock from "./components/hooks/CodeBlock";
 import Button from "./components/hooks/Button";
 import TypeExample from "./components/type-components/TypeExample";
+import HideButton from "./components/hooks/HideButton";
 
 const ToastTypes = () => {
 	useScrollToTop();

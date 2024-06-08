@@ -5,6 +5,7 @@ import Hei2 from "../hooks/Hei2";
 import { useState } from "react";
 import Button from "../hooks/Button";
 import RadioGroupComponent from "../hooks/RadioComponent";
+import HideButton from "../hooks/HideButton";
 
 const toastType = [
 	{ name: "success", message: "Code compiled successfully." },
@@ -27,7 +28,7 @@ const toastColor = [
 ];
 
 const ToastColor = () => {
-	const { toastMaster } = useToast();
+	const { toastMaster, hideToast } = useToast();
 
 	const [selected, setSelected] = useState(toastType[0]);
 	const [selectedColor, setSelectedColor] = useState(toastColor[0]);
@@ -92,12 +93,20 @@ const ToastColor = () => {
 					</small>
 				</p>
 
-				<Button
-					classname={"w-full"}
-					type={"submit"}
-				>
-					Pop
-				</Button>
+				<div className="flex flex-col gap-4 lg:flex-row">
+					<Button
+						classname={"w-full"}
+						type={"submit"}
+					>
+						Pop
+					</Button>
+					<HideButton
+						clickAction={hideToast}
+						classname={"w-full"}
+					>
+						Hide
+					</HideButton>
+				</div>
 			</form>
 
 			<div>

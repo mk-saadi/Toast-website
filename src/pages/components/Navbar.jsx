@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import { useToggleTheme } from "../ThemeProvider";
 
 const Navbar = () => {
-	const [themes, setTheme] = useState("nord");
-
-	useEffect(() => {
-		document.documentElement.setAttribute("data-theme", themes);
-	}, [themes]);
+	const toggleTheme = useToggleTheme();
 
 	const handleThemeChange = () => {
-		setTheme((prevTheme) => (prevTheme === "nord" ? "sunset" : "nord"));
+		toggleTheme();
 	};
 
 	return (

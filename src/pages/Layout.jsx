@@ -1,10 +1,10 @@
 import Navbar from "./components/Navbar";
 import { Outlet, useNavigate } from "react-router-dom";
 import classNames from "classnames";
-import useTheme from "./components/useTheme";
 import SideNav from "./components/SideNav";
 import Footer from "./components/Footer";
 import { useEffect } from "react";
+import { useTheme } from "./ThemeProvider";
 
 const Layout = () => {
 	const theme = useTheme();

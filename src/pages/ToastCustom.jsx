@@ -6,6 +6,8 @@ import ToastColor from "./components/custom-components/TextColor";
 import Background from "./components/custom-components/Bacnkground";
 import CustomLink from "./components/custom-components/CustomLink";
 import Hei2 from "./components/hooks/Hei2";
+import { useToast } from "react-toast-master";
+import { useTheme } from "./ThemeProvider";
 
 const ToastCustom = () => {
 	useScrollToTop();
@@ -26,6 +28,30 @@ const ToastCustom = () => {
 		window.addEventListener("hashchange", handleHashChange, false);
 		return () => window.removeEventListener("hashchange", handleHashChange, false);
 	}, []);
+
+	const theme = useTheme();
+	const { toastMaster } = useToast();
+
+	const showToast = () => {
+		let toastType, toastBg;
+
+		if (theme === "nord") {
+			toastType = "successDark";
+			toastBg = "white";
+		} else if (theme === "sunset") {
+			toastType = "successWhite";
+			toastBg = "dark";
+		}
+
+		toastMaster({
+			type: toastType,
+			message: "Copied!",
+			bg: toastBg,
+			radius: "none",
+			transition: "down",
+			cancelButton: true,
+		});
+	};
 
 	return (
 		<div
@@ -48,6 +74,10 @@ const ToastCustom = () => {
 					<>
 						<Background />
 					</>
+				</div>
+
+				<div>
+					<button onClick={showToast}>Show Toast</button>
 				</div>
 
 				<div className="flex justify-between w-full">
