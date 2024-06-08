@@ -21,7 +21,10 @@ const Hcodes = () => {
 		<>
 			<div className="overflow-hidden">
 				<Hei2>Simple Example</Hei2>
-				<CodeBlock codeString={codeString} />
+				<CodeBlock
+					language={"jsx"}
+					codeString={codeString}
+				/>
 			</div>
 
 			<div className="flex justify-end">

@@ -34,10 +34,16 @@ const Instructions = () => {
 				In the <CustomSpan>main.jsx</CustomSpan> file of your project
 			</ItalicText>
 			<p>Import the ToastProvider component in main.jsx file</p>
-			<CodeBlock codeString={importProvider} />
+			<CodeBlock
+				language={"jsx"}
+				codeString={importProvider}
+			/>
 
 			<ItalicText classname={"mt-4"}>Example</ItalicText>
-			<CodeBlock codeString={codeString} />
+			<CodeBlock
+				language={"jsx"}
+				codeString={codeString}
+			/>
 		</div>
 	);
 };

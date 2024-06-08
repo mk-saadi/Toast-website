@@ -6,6 +6,7 @@ import { useState } from "react";
 import Button from "../hooks/Button";
 import RadioGroupComponent from "../hooks/RadioComponent";
 import HideButton from "../hooks/HideButton";
+import CodeBlock from "../hooks/CodeBlock";
 
 const toastType = [
 	{ name: "success", message: "Code compiled successfully." },
@@ -37,6 +38,12 @@ const ToastColor = () => {
 	const message = selected.message;
 	const color = selectedColor.color;
 
+	const codeString = `toastMaster({
+	type: "${types + color}",
+	message: "${message}",
+	bg: "glass",
+})`;
+
 	const toastHandler = (e) => {
 		e.preventDefault();
 
@@ -50,17 +57,20 @@ const ToastColor = () => {
 	};
 
 	return (
-		<div
-			id="toastColor"
-			className="space-y-4"
-		>
+		<div id="toastColor">
 			<Hei2 classname={"mb-2"}># Toast Types/colors:</Hei2>
 			<p>
 				Every toast has <CustomSpan>three</CustomSpan>(some two) different colors eg. primary, a white
 				and a dark version.
 			</p>
 
-			<ItalicText>Example below:</ItalicText>
+			<CodeBlock
+				codeString={codeString}
+				language={"jsx"}
+			/>
+
+			<ItalicText classname={"mt-2"}>Example below:</ItalicText>
+
 			<form
 				onSubmit={toastHandler}
 				className="flex flex-col gap-y-4"
@@ -93,7 +103,7 @@ const ToastColor = () => {
 					</small>
 				</p>
 
-				<div className="flex flex-col gap-4 lg:flex-row">
+				<div className="flex flex-col gap-x-4 lg:flex-row">
 					<Button
 						classname={"w-full"}
 						type={"submit"}
@@ -109,12 +119,14 @@ const ToastColor = () => {
 				</div>
 			</form>
 
-			<div>
+			<div className="mt-4">
 				<p>
-					Toast type "basic" and "confirm" by default have <CustomSpan>white</CustomSpan> color as
-					their value since by default their text color is white. <br />
-					So no need to put <CustomSpan>"basicWhite"</CustomSpan> or{" "}
-					<CustomSpan>"confirmWhite"</CustomSpan> in the "type" key of toastMaster()
+					Toast type &quot;basic&quot; and &quot;confirm&quot; by default have{" "}
+					<CustomSpan>white</CustomSpan> color as their value since by default their text color is
+					white. <br />
+					So no need to put <CustomSpan>&quot;basicWhite&quot;</CustomSpan> or{" "}
+					<CustomSpan>&quot;confirmWhite&quot;</CustomSpan> in the &quot;type&quot; key of
+					toastMaster()
 				</p>
 			</div>
 		</div>

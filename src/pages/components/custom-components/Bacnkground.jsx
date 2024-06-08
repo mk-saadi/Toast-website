@@ -4,6 +4,9 @@ import { useToast } from "react-toast-master";
 import Hei2 from "../hooks/Hei2";
 import Button from "../hooks/Button";
 import RadioGroupComponent from "../hooks/RadioComponent";
+import HideButton from "../hooks/HideButton";
+import CustomSpan from "../hooks/Highlight";
+import CodeBlock from "../hooks/CodeBlock";
 
 const toastBG = [
 	{ bg: "white", name: "White/default", message: "Hello World!" },
@@ -28,7 +31,7 @@ const toastColor = [
 ];
 
 const Background = () => {
-	const { toastMaster } = useToast();
+	const { toastMaster, hideToast } = useToast();
 
 	const [selectedBG, setSelectedBG] = useState(toastBG[0]);
 
@@ -37,6 +40,12 @@ const Background = () => {
 	const tType = selectedBG.bg === "white" ? "info" : "info";
 	const [selectedColor, setSelectedColor] = useState(toastColor[0]);
 	const color = selectedColor.color;
+
+	const codeString = `toastMaster({
+	type: "${tType + color}",
+	message: "${message}",
+	bg: "${bg}",
+})`;
 
 	const handleBG = (e) => {
 		e.preventDefault();
@@ -53,8 +62,18 @@ const Background = () => {
 	return (
 		<div id="backgroundColor">
 			<Hei2 classname={"mb-2"}># Toast Background:</Hei2>
+			<p>
+				You can use different background color best suited for your toast. If you don't define any
+				background color for your toast it will take <CustomSpan>"white"</CustomSpan> as it's default
+				background color.
+			</p>
 
-			<ItalicText classname={"-mb-2"}>Example below:</ItalicText>
+			<CodeBlock
+				codeString={codeString}
+				language={"jsx"}
+			/>
+
+			<ItalicText classname={"mt-2 -mb-2"}>Example below:</ItalicText>
 			<form
 				onSubmit={handleBG}
 				className="flex flex-col mt-2 gap-y-4"
@@ -84,13 +103,19 @@ const Background = () => {
 					</small>
 				</p>
 
-				<div className="flex justify-center w-full">
+				<div className="flex flex-col gap-x-4 lg:flex-row">
 					<Button
 						classname={"w-full"}
 						type={"submit"}
 					>
 						Pop
 					</Button>
+					<HideButton
+						clickAction={hideToast}
+						classname={"w-full"}
+					>
+						Hide
+					</HideButton>
 				</div>
 			</form>
 		</div>

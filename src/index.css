@@ -36,15 +36,12 @@ html::before {
 .hamburger {
 	cursor: pointer;
 }
-
 .hamburger input {
 	display: none;
 }
-
 .hamburger svg {
 	height: 2em;
 }
-
 .line {
 	fill: none;
 	stroke: white;
@@ -52,7 +49,35 @@ html::before {
 	stroke-linejoin: round;
 	stroke-width: 3;
 }
-
 .line-top-bottom {
 	stroke-dasharray: 12 63;
+}
+
+/* hide button hover background hover animation */
+.striped-button:hover {
+	background-image: linear-gradient(
+		45deg,
+		#69a8cf8c 21.05%,
+		#ffa8a88e 21.05%,
+		#ffa8a88e 23.68%,
+		#ee617d88 23.68%,
+		#ee617d88 50%,
+		#69a8cf8c 50%,
+		#69a8cf8c 71.05%,
+		#ffa8a88e 71.05%,
+		#ffa8a88e 73.68%,
+		#ee617d88 73.68%,
+		#ee617d88 100%
+	);
+	background-size: 134.35px 134.35px;
+	animation: backgroundAnimation 5s infinite linear;
+}
+
+@keyframes backgroundAnimation {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -134.35px 0;
+	}
 }

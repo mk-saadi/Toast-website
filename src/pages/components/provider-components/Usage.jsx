@@ -79,13 +79,19 @@ const Usage = () => {
 				<CustomSpan>toastMaster</CustomSpan> and <CustomSpan>hideToast</CustomSpan>, if you want to
 				remove the toast after an action.
 			</p>
-			<CodeBlock codeString={importUseToast} />
+			<CodeBlock
+				language={"jsx"}
+				codeString={importUseToast}
+			/>
 
 			<ItalicText classname={"mt-4"}>Example</ItalicText>
 			<p>
 				Using <CustomSpan>TailwindCSS</CustomSpan> for styling footer. You may use custom css.
 			</p>
-			<CodeBlock codeString={codeStringApp} />
+			<CodeBlock
+				language={"jsx"}
+				codeString={codeStringApp}
+			/>
 			<div className="flex justify-end">
 				<Button clickAction={popatoast}>Pop the toast!</Button>
 			</div>

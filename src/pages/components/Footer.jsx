@@ -6,7 +6,7 @@ const Footer = () => {
 		<div
 			className="flex items-center justify-center w-full px-6 py-5"
 			style={{
-				color: "var(--text-color-white-white)",
+				color: "var(--text-color-dark-white)",
 				backgroundColor: "var(--default)",
 			}}
 		>

@@ -8,6 +8,7 @@ import CustomLink from "./components/custom-components/CustomLink";
 import Hei2 from "./components/hooks/Hei2";
 import { useToast } from "react-toast-master";
 import { useTheme } from "./ThemeProvider";
+import Position from "./components/custom-components/Position";
 
 const ToastCustom = () => {
 	useScrollToTop();
@@ -30,24 +31,27 @@ const ToastCustom = () => {
 	}, []);
 
 	const theme = useTheme();
+	console.log("theme: ", theme);
 	const { toastMaster } = useToast();
 
 	const showToast = () => {
-		let toastType, toastBg;
+		let toastType, toastBg, radius;
 
 		if (theme === "nord") {
-			toastType = "successDark";
-			toastBg = "white";
-		} else if (theme === "sunset") {
 			toastType = "successWhite";
-			toastBg = "dark";
+			toastBg = "gray";
+			radius = "md";
+		} else if (theme === "sunset") {
+			toastType = "successDark";
+			toastBg = "glass";
+			radius = "sm";
 		}
 
 		toastMaster({
 			type: toastType,
 			message: "Copied!",
 			bg: toastBg,
-			radius: "none",
+			radius: radius,
 			transition: "down",
 			cancelButton: true,
 		});
@@ -73,6 +77,9 @@ const ToastCustom = () => {
 					</>
 					<>
 						<Background />
+					</>
+					<>
+						<Position />
 					</>
 				</div>
 
