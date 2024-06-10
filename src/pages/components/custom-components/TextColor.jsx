@@ -63,13 +63,12 @@ const ToastColor = () => {
 				Every toast has <CustomSpan>three</CustomSpan>(some two) different colors eg. primary, a white
 				and a dark version.
 			</p>
+			<ItalicText classname={"mt-2"}>Example below:</ItalicText>
 
 			<CodeBlock
 				codeString={codeString}
 				language={"jsx"}
 			/>
-
-			<ItalicText classname={"mt-2"}>Example below:</ItalicText>
 
 			<form
 				onSubmit={toastHandler}

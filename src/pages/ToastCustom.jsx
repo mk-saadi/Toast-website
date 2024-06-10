@@ -9,6 +9,8 @@ import Hei2 from "./components/hooks/Hei2";
 import { useToast } from "react-toast-master";
 import { useTheme } from "./ThemeProvider";
 import Position from "./components/custom-components/Position";
+import Transition from "./components/custom-components/Transition";
+import ToastFooter from "./components/custom-components/ToastFooter";
 
 const ToastCustom = () => {
 	useScrollToTop();
@@ -31,7 +33,6 @@ const ToastCustom = () => {
 	}, []);
 
 	const theme = useTheme();
-	console.log("theme: ", theme);
 	const { toastMaster } = useToast();
 
 	const showToast = () => {
@@ -39,11 +40,11 @@ const ToastCustom = () => {
 
 		if (theme === "nord") {
 			toastType = "successWhite";
-			toastBg = "gray";
+			toastBg = "glass";
 			radius = "md";
 		} else if (theme === "sunset") {
-			toastType = "successDark";
-			toastBg = "glass";
+			toastType = "successWhite";
+			toastBg = "gray";
 			radius = "sm";
 		}
 
@@ -54,6 +55,7 @@ const ToastCustom = () => {
 			radius: radius,
 			transition: "down",
 			cancelButton: true,
+			footer: "hello darkness my old friend",
 		});
 	};
 
@@ -80,6 +82,12 @@ const ToastCustom = () => {
 					</>
 					<>
 						<Position />
+					</>
+					<>
+						<Transition />
+					</>
+					<>
+						<ToastFooter />
 					</>
 				</div>
 

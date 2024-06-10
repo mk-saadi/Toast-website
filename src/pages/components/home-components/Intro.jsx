@@ -1,21 +1,18 @@
-import { useTheme } from "../../ThemeProvider";
 import Hei2 from "../hooks/Hei2";
-import classNames from "classnames";
 
 const Intro = () => {
-	const theme = useTheme();
-
 	return (
 		<>
 			<Hei2>Introducing</Hei2>
 			<h1
-				className={classNames("text-5xl font-bold uppercase mt-2 mb-1", {
-					"": theme === "nord" || theme === "sunset",
-				})}
+				style={{
+					color: "var(--text-color-dark-white)",
+				}}
+				className="mt-2 mb-1 font-serif text-5xl font-bold uppercase"
 			>
 				react-toast-master
 			</h1>
-			<h3>React's most customizable toast component.</h3>
+			<p className="font-sans font-medium">React's most customizable toast component.</p>
 		</>
 	);
 };

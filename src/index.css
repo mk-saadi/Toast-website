@@ -5,16 +5,27 @@
 html {
 	scroll-behavior: smooth;
 	font-family: "Montserrat", sans-serif;
-	position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Playfair Display", serif;
+	font-weight: bold;
 }
 
+body {
+	position: relative;
+}
 .offset-anchor {
 	position: relative;
 	top: -60px;
 	padding-top: 60px;
 }
 
-html::before {
+body::before {
 	content: "";
 	position: absolute;
 	top: 0;

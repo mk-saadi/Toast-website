@@ -67,13 +67,13 @@ const Background = () => {
 				background color for your toast it will take <CustomSpan>"white"</CustomSpan> as it's default
 				background color.
 			</p>
+			<ItalicText classname={"mt-2 -mb-2"}>Example below:</ItalicText>
 
 			<CodeBlock
 				codeString={codeString}
 				language={"jsx"}
 			/>
 
-			<ItalicText classname={"mt-2 -mb-2"}>Example below:</ItalicText>
 			<form
 				onSubmit={handleBG}
 				className="flex flex-col mt-2 gap-y-4"

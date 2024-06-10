@@ -29,7 +29,6 @@ const Position = () => {
   type: "info",
   position: "${pg}",
   message: "${message}'${pg}'",
-  bg: "white",
 })`;
 
 	const handlePG = (e) => {
@@ -37,7 +36,7 @@ const Position = () => {
 
 		toastMaster({
 			type: "info",
-			message: message,
+			message: `${message}"${pg}"`,
 			position: pg,
 			bg: "white",
 			cancelButton: true,
@@ -51,13 +50,13 @@ const Position = () => {
 			<p>
 				Select the best toast <CustomSpan>position</CustomSpan> that suits your needs.
 			</p>
+			<ItalicText classname={"mt-2 -mb-2"}>Example below:</ItalicText>
 
 			<CodeBlock
 				codeString={codeString}
 				language={"jsx"}
 			/>
 
-			<ItalicText classname={"mt-2 -mb-2"}>Example below:</ItalicText>
 			<form
 				onSubmit={handlePG}
 				className="flex flex-col mt-2 gap-y-4"

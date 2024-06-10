@@ -22,14 +22,14 @@ const Instructions = () => {
 	return (
 		<div>
 			<Hei2>Toast Setup Instructions</Hei2>
-			<h3 className="mt-1 mb-8">
+			<p className="mt-1 mb-8">
 				The <CustomSpan>ToastProvider</CustomSpan> component is essential for enabling toast
 				notifications in your application.
 				<br />
 				<br />
 				As it uses the <CustomSpan>Context API</CustomSpan>, it must be placed at the top level of
 				your component tree to ensure that toasts are accessible from any part of the application.
-			</h3>
+			</p>
 			<ItalicText>
 				In the <CustomSpan>main.jsx</CustomSpan> file of your project
 			</ItalicText>

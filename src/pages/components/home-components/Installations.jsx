@@ -20,7 +20,7 @@ const Installations = () => {
 			}}
 		>
 			<Hei2>Installation with</Hei2>
-			<h3>Install entire package with styles only under 50kb.</h3>
+			<h3 className="font-sans font-medium">Install entire package with styles only under 50kb.</h3>
 			<div className="flex flex-col mt-4 gap-y-6">
 				<div className="flex flex-col">
 					<h3 className="text-lg italic font-medium">npm</h3>
