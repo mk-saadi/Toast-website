@@ -14,8 +14,7 @@ const CodeBlock = ({ codeString, language }) => {
 			<SyntaxHighlighter
 				language={language}
 				style={codeTheme}
-				showLineNumbers
-				wrapLines
+				showLineNumbers={true}
 				aria-label="code"
 			>
 				{codeString}

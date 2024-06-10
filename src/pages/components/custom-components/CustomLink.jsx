@@ -26,7 +26,7 @@ const CustomLink = () => {
 				</li>
 				<li className="flex items-center justify-start gap-x-1 group">
 					<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
-					<a href="#cancelButton">Cancel Button</a>
+					<a href="#cancelButton">Cancel Button and hideToast()</a>
 				</li>
 				<li className="flex items-center justify-start gap-x-1 group">
 					<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
