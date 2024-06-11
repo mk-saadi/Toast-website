@@ -11,6 +11,7 @@ import { useTheme } from "./ThemeProvider";
 import Position from "./components/custom-components/Position";
 import Transition from "./components/custom-components/Transition";
 import ToastFooter from "./components/custom-components/ToastFooter";
+import CancelButton from "./components/custom-components/CancelButton";
 
 const ToastCustom = () => {
 	useScrollToTop();
@@ -22,7 +23,7 @@ const ToastCustom = () => {
 				const element = document.getElementById(id);
 				if (element) {
 					const yOffset = -60;
-					const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+					const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
 					window.scrollTo({ top: y, behavior: "smooth" });
 				}
 			}
@@ -39,8 +40,8 @@ const ToastCustom = () => {
 		let toastType, toastBg, radius;
 
 		if (theme === "nord") {
-			toastType = "successWhite";
-			toastBg = "glass";
+			toastType = "basic";
+			toastBg = "dark";
 			radius = "md";
 		} else if (theme === "sunset") {
 			toastType = "successWhite";
@@ -50,12 +51,12 @@ const ToastCustom = () => {
 
 		toastMaster({
 			type: toastType,
-			message: "Copied!",
+			message: "",
 			bg: toastBg,
 			radius: radius,
 			transition: "down",
 			cancelButton: true,
-			footer: "hello darkness my old friend",
+			footer: "Hello darkness my old friend",
 		});
 	};
 
@@ -88,6 +89,9 @@ const ToastCustom = () => {
 					</>
 					<>
 						<ToastFooter />
+					</>
+					<>
+						<CancelButton />
 					</>
 				</div>
 

@@ -4,7 +4,7 @@ const Footer = () => {
 	const currentYear = currentDate.getFullYear();
 	return (
 		<div
-			className="flex items-center justify-center w-full px-6 py-5 font-serif font-bold"
+			className="flex items-center justify-center w-full px-6 font-serif font-bold py-7"
 			style={{
 				color: "var(--text-color-dark-white)",
 				backgroundColor: "var(--default)",

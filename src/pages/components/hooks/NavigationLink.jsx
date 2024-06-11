@@ -14,15 +14,7 @@ const NavigationLink = ({ direction, to, routeName }) => {
 			}}
 		>
 			<p>{direction}</p>
-			<p
-				className="text-base italic font-medium"
-				style={{
-					borderRadius: "var(--borderRadius)",
-					border: "var(--border)",
-				}}
-			>
-				{routeName}
-			</p>
+			<p className="text-base italic font-medium">{routeName}</p>
 		</Link>
 	);
 };

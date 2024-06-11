@@ -46,7 +46,6 @@ const ToastFooter = () => {
 })`;
 
 	let toastType, toastBg;
-
 	if (theme === "nord") {
 		toastType = "infoWhite";
 		toastBg = "glass";
@@ -56,7 +55,6 @@ const ToastFooter = () => {
 	}
 
 	let toastTypeLoad, toastBgLoad;
-
 	if (theme === "nord") {
 		toastTypeLoad = "loadingWhite";
 		toastBgLoad = "glass";
@@ -97,7 +95,7 @@ const ToastFooter = () => {
 			message: "Sure you want to delete this user?",
 			position: "center",
 			bg: "white",
-			transition: "fade",
+			transition: "zoom",
 			footer: "If you click 'confirm' this user will be permanently deleted. Like, forever from the database.",
 			align: "left",
 		});
