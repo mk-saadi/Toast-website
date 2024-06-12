@@ -68,13 +68,13 @@ body::before {
 .striped-button:hover {
 	background-image: linear-gradient(
 		45deg,
-		#69a8cf8c 21.05%,
+		#8fc8ebbb 21.05%,
 		#ffa8a88e 21.05%,
 		#ffa8a88e 23.68%,
 		#ee617d88 23.68%,
 		#ee617d88 50%,
-		#69a8cf8c 50%,
-		#69a8cf8c 71.05%,
+		#8fc8ebbb 50%,
+		#8fc8ebbb 71.05%,
 		#ffa8a88e 71.05%,
 		#ffa8a88e 73.68%,
 		#ee617d88 73.68%,

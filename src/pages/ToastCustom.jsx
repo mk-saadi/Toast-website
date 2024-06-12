@@ -12,6 +12,7 @@ import Position from "./components/custom-components/Position";
 import Transition from "./components/custom-components/Transition";
 import ToastFooter from "./components/custom-components/ToastFooter";
 import CancelButton from "./components/custom-components/CancelButton";
+import Align from "./components/custom-components/Align";
 
 const ToastCustom = () => {
 	useScrollToTop();
@@ -37,21 +38,23 @@ const ToastCustom = () => {
 	const { toastMaster } = useToast();
 
 	const showToast = () => {
-		let toastType, toastBg, radius;
+		let toastType, toastBg, radius, message;
 
 		if (theme === "nord") {
 			toastType = "basic";
 			toastBg = "dark";
 			radius = "md";
+			message = "Quote from the abyss.";
 		} else if (theme === "sunset") {
-			toastType = "successWhite";
+			toastType = "infoWhite";
 			toastBg = "gray";
 			radius = "sm";
+			message = "Positive quote";
 		}
 
 		toastMaster({
 			type: toastType,
-			message: "",
+			message: message,
 			bg: toastBg,
 			radius: radius,
 			transition: "down",
@@ -74,7 +77,7 @@ const ToastCustom = () => {
 					<CustomLink />
 				</>
 
-				<div className="flex flex-col gap-y-14">
+				<div className="flex flex-col gap-y-36">
 					<>
 						<ToastColor />
 					</>
@@ -83,6 +86,9 @@ const ToastCustom = () => {
 					</>
 					<>
 						<Position />
+					</>
+					<>
+						<Align />
 					</>
 					<>
 						<Transition />

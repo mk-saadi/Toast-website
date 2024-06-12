@@ -8,57 +8,41 @@ import RadioGroupComponent from "../hooks/RadioComponent";
 import HideButton from "../hooks/HideButton";
 import CodeBlock from "../hooks/CodeBlock";
 
-const toastType = [
-	{ name: "success", message: "Code compiled successfully." },
-	{ name: "error", message: "Error at code 143." },
-	{ name: "info", message: "You have a dentist appointment tomorrow at 9:30 am." },
-	{ name: "warning", message: "Couldn't compile code. See error" },
-	{ name: "loading", message: "Loading happiness." },
-	{ name: "basic", message: "Just another Tuesday." },
-	{
-		name: "confirm",
-		message: "Are you sure you want to delete your enemies?",
-		align: "left",
-	},
+const toastAlign = [
+	{ align: "center", name: "Center/Default", message: "Toast text alignment from" },
+	{ align: "left", name: "Left", message: "Toast text alignment from" },
+	{ align: "right", name: "Right", message: "Toast text alignment from" },
 ];
 
-const toastColor = [
-	{ color: "", name: "Default" },
-	{ color: "White", name: "White" },
-	{ color: "Dark", name: "Dark" },
-];
-
-const ToastColor = () => {
+const Align = () => {
 	const { toastMaster, hideToast } = useToast();
+	const [selected, setSelected] = useState(toastAlign[0]);
 
-	const [selected, setSelected] = useState(toastType[0]);
-	const [selectedColor, setSelectedColor] = useState(toastColor[0]);
-
-	const types = selected.name;
 	const message = selected.message;
-	const color = selectedColor.color;
+	const align = selected.align;
 
 	const codeString = `toastMaster({
-	type: "${types + color}",
-	message: "${message}",
-	bg: "glass",
+	type: "infoWhite",
+	message: "${message} '${align}'",
+	align: "${align}",
 })`;
 
 	const toastHandler = (e) => {
 		e.preventDefault();
 
 		toastMaster({
-			type: types + color,
-			message: message,
+			type: "infoWhite",
+			message: `${message} '${align}'`,
 			cancelButton: true,
 			transition: "down",
-			bg: "glass",
+			bg: "dark",
+			align: align,
 		});
 	};
 
 	return (
-		<div id="toastColor">
-			<Hei2 classname={"mb-2"}># Toast Types/colors:</Hei2>
+		<div id="align">
+			<Hei2 classname={"mb-2"}># Toast Text Align:</Hei2>
 
 			<p>
 				Every toast has <CustomSpan>three</CustomSpan>(some two) different colors eg. primary, a white
@@ -81,15 +65,7 @@ const ToastColor = () => {
 						labelText="Select a toast Type."
 						radioValue={selected}
 						setRadioValue={setSelected}
-						options={toastType}
-					/>
-
-					{/* toast color */}
-					<RadioGroupComponent
-						labelText="Select a toast Color."
-						radioValue={selectedColor}
-						setRadioValue={setSelectedColor}
-						options={toastColor}
+						options={toastAlign}
 					/>
 				</div>
 
@@ -118,19 +94,8 @@ const ToastColor = () => {
 					</HideButton>
 				</div>
 			</form>
-
-			<div className="mt-4">
-				<p>
-					Toast type &quot;basic&quot; and &quot;confirm&quot; by default have{" "}
-					<CustomSpan>white</CustomSpan> color as their value since by default their text color is
-					white. <br />
-					So no need to put <CustomSpan>&quot;basicWhite&quot;</CustomSpan> or{" "}
-					<CustomSpan>&quot;confirmWhite&quot;</CustomSpan> in the &quot;type&quot; key of
-					toastMaster()
-				</p>
-			</div>
 		</div>
 	);
 };
 
-export default ToastColor;
+export default Align;
