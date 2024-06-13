@@ -39,7 +39,7 @@ const Position = () => {
 			message: `${message}"${pg}"`,
 			position: pg,
 			bg: "white",
-			cancelButton: true,
+
 			transition: "zoom",
 		});
 	};

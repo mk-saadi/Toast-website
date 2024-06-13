@@ -69,7 +69,7 @@ const ToastFooter = () => {
 			message: "Toast with footer.",
 			position: "top",
 			bg: toastBg,
-			cancelButton: true,
+
 			transition: "down",
 			footer: (
 				<p>
@@ -109,7 +109,6 @@ const ToastFooter = () => {
 			bg: toastBgLoad,
 			transition: "down",
 			loadFooter: <p>Whoa! You really waited for 5 seconds.</p>,
-			cancelButton: true,
 		});
 	};
 
@@ -120,8 +119,7 @@ const ToastFooter = () => {
 			<div className="space-y-2.5">
 				<p>
 					There are <CustomSpan>two</CustomSpan> kinds of footer in react-toast-master. They are{" "}
-					<CustomSpan>&quot;footer&quot;</CustomSpan> and{" "}
-					<CustomSpan>&quot;loadFooter&quot;</CustomSpan>.
+					<CustomSpan>footer</CustomSpan> and <CustomSpan>loadFooter</CustomSpan>.
 				</p>
 				<p>
 					Both &quot;footer&quot; and &quot;loadFooter&quot; can be <CustomSpan>string</CustomSpan>{" "}

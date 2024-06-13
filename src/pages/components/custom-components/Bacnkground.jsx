@@ -53,7 +53,7 @@ const Background = () => {
 		toastMaster({
 			type: tType + color,
 			message: message,
-			cancelButton: true,
+
 			transition: "down",
 			bg: bg,
 		});
@@ -64,7 +64,7 @@ const Background = () => {
 			<Hei2 classname={"mb-2"}># Toast Background:</Hei2>
 			<p>
 				You can use different background color best suited for your toast. If you don't define any
-				background color for your toast it will take <CustomSpan>"white"</CustomSpan> as it's default
+				background color for your toast it will take <CustomSpan>white</CustomSpan> as it's default
 				background color.
 			</p>
 			<ItalicText classname={"mt-2 -mb-2"}>Example below:</ItalicText>

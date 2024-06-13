@@ -29,7 +29,7 @@ function App() {
 			toastMaster({
 				type: "loadingWhite",
 				message: "Please wait!",
-				cancelButton: true,
+
 				bg: "dark",
 			});
 
@@ -39,7 +39,6 @@ function App() {
 					message: "hello",
 					bg: "dark",
 					radius: "full",
-					cancelButton: true,
 				});
 			}, 4500);
 		}
@@ -67,7 +66,7 @@ function App() {
 							radius: "none",
 							// shadow: "error",
 
-							// cancelButton: true,
+							//  ,
 						})
 					}
 				>
@@ -90,7 +89,6 @@ function App() {
 							// skew: "right12",
 							transition: "zoom",
 							shadow: "none",
-							cancelButton: true,
 						})
 					}
 				>
@@ -115,7 +113,6 @@ function App() {
 							bg: "error",
 							transition: "top",
 							shadow: "white",
-							cancelButton: true,
 						})
 					}
 				>

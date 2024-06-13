@@ -40,10 +40,8 @@ const Transition = () => {
 			type: "info",
 			message: `${message}'${tr}' from position '${position}'`,
 			bg: "white",
-			cancelButton: true,
 			transition: tr,
 			position: position,
-			align: "left",
 		});
 	};
 
@@ -51,9 +49,8 @@ const Transition = () => {
 		<div id="transition">
 			<Hei2 classname={"mb-2"}># Toast Transition/Animation:</Hei2>
 			<p>
-				You can use different background color best suited for your toast. If you don&apos;t define
-				any background color for your toast it will take <CustomSpan>&quot;white&quot;</CustomSpan> as
-				it&apos;s default background color.
+				Select the toast transition or animation best suited for your project. The default is{" "}
+				<CustomSpan>zoom</CustomSpan>
 			</p>
 			<ItalicText classname={"mt-2 -mb-2"}>Example below:</ItalicText>
 
@@ -78,8 +75,8 @@ const Transition = () => {
 
 				<p className="max-w-prose">
 					<small>
-						* if the text is invisible try changing the text color. It may have become invisible
-						due to the background color.
+						* You have to tweak the toast transition based on your toast position. Certain
+						transitions might not be suited for all toast positions.
 					</small>
 				</p>
 

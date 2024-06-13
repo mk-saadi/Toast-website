@@ -58,7 +58,6 @@ const ToastCustom = () => {
 			bg: toastBg,
 			radius: radius,
 			transition: "down",
-			cancelButton: true,
 			footer: "Hello darkness my old friend",
 		});
 	};

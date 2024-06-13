@@ -35,7 +35,6 @@ const TypeExample = () => {
 		toastMaster({
 			type: types,
 			message: message,
-			cancelButton: true,
 			transition: "down",
 			align: align,
 			footer: footer,

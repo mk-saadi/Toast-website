@@ -50,7 +50,7 @@ const ToastColor = () => {
 		toastMaster({
 			type: types + color,
 			message: message,
-			cancelButton: true,
+
 			transition: "down",
 			bg: "glass",
 		});
@@ -124,9 +124,8 @@ const ToastColor = () => {
 					Toast type &quot;basic&quot; and &quot;confirm&quot; by default have{" "}
 					<CustomSpan>white</CustomSpan> color as their value since by default their text color is
 					white. <br />
-					So no need to put <CustomSpan>&quot;basicWhite&quot;</CustomSpan> or{" "}
-					<CustomSpan>&quot;confirmWhite&quot;</CustomSpan> in the &quot;type&quot; key of
-					toastMaster()
+					So no need to put <CustomSpan>basicWhite</CustomSpan> or{" "}
+					<CustomSpan>confirmWhite</CustomSpan> in the &quot;type&quot; key of toastMaster()
 				</p>
 			</div>
 		</div>

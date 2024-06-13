@@ -1,4 +1,3 @@
-import { useToast } from "react-toast-master";
 import ItalicText from "../hooks/ItalicText";
 import CustomSpan from "../hooks/Highlight";
 import Hei2 from "../hooks/Hei2";
@@ -7,6 +6,7 @@ import Button from "../hooks/Button";
 import RadioGroupComponent from "../hooks/RadioComponent";
 import HideButton from "../hooks/HideButton";
 import CodeBlock from "../hooks/CodeBlock";
+import { useToast } from "react-toast-master";
 
 const toastAlign = [
 	{ align: "center", name: "Center/Default", message: "Toast text alignment from" },
@@ -31,9 +31,8 @@ const Align = () => {
 		e.preventDefault();
 
 		toastMaster({
-			type: "infoWhite",
+			type: "info",
 			message: `${message} '${align}'`,
-			cancelButton: true,
 			transition: "down",
 			bg: "dark",
 			align: align,
@@ -45,8 +44,7 @@ const Align = () => {
 			<Hei2 classname={"mb-2"}># Toast Text Align:</Hei2>
 
 			<p>
-				Every toast has <CustomSpan>three</CustomSpan>(some two) different colors eg. primary, a white
-				and a dark version.
+				You can change the text alignment of the toast. The default is <CustomSpan>center</CustomSpan>
 			</p>
 			<ItalicText classname={"mt-2"}>Example below:</ItalicText>
 
@@ -62,7 +60,7 @@ const Align = () => {
 				<div className="flex flex-row gap-x-8">
 					{/* toast default */}
 					<RadioGroupComponent
-						labelText="Select a toast Type."
+						labelText="Select toast text alignment."
 						radioValue={selected}
 						setRadioValue={setSelected}
 						options={toastAlign}

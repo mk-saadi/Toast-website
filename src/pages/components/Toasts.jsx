@@ -22,7 +22,7 @@ const codeString = `
                 transition: "jelly",
                 shadow: "error",
 
-                cancelButton: true,
+                 ,
             })
         }
     >
