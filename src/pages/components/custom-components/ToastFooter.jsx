@@ -7,11 +7,7 @@ import HideButton from "../hooks/HideButton";
 import CodeBlock from "../hooks/CodeBlock";
 import { useTheme } from "../../ThemeProvider";
 
-const ToastFooter = () => {
-	const { toastMaster, hideToast } = useToast();
-	const theme = useTheme();
-
-	const codeString = `toastMaster({
+const codeString = `toastMaster({
   type: "infoWhite",
   message: "Toast with footer.",
   footer: <p>
@@ -30,7 +26,7 @@ const ToastFooter = () => {
   bg: "glass",
 })`;
 
-	const codeStringConfirm = `toastMaster({
+const codeStringConfirm = `toastMaster({
   type: "confirmDark",
   message: "Sure you want to delete this user?",
   bg: "white",
@@ -39,11 +35,15 @@ const ToastFooter = () => {
   transition: "fade",
 })`;
 
-	const codeStringLoading = `toastMaster({
+const codeStringLoading = `toastMaster({
   type: "loadingWhite",
   message: "Please wait!",
   loadFooter: <p>Whoa! You really waited for 5 seconds.</p>,
 })`;
+
+const ToastFooter = () => {
+	const { toastMaster, hideToast } = useToast();
+	const theme = useTheme();
 
 	let toastType, toastBg;
 	if (theme === "nord") {

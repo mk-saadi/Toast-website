@@ -95,7 +95,7 @@ const Align = () => {
 						/>
 					</div>
 
-					<p className="max-w-prose">
+					{/* <p className="max-w-prose">
 						<small>
 							* if the text is invisible try changing the text color. It may have become
 							invisible due to the background color.
@@ -103,7 +103,7 @@ const Align = () => {
 							&quot;basic&quot; and &quot;confirm&quot; doesn&apos;t have &quot;White&quot; as
 							toast color. So leave the color to &quot;Default&quot; or &quot;Dark&quot;.
 						</small>
-					</p>
+					</p> */}
 
 					<div className="flex flex-col gap-x-4 lg:flex-row">
 						<Button
@@ -121,12 +121,16 @@ const Align = () => {
 					</div>
 				</form>
 
-				<CodeBlock
-					codeString={codeStringConfirm}
-					language={"jsx"}
-				/>
 				<form onSubmit={toastHandlerSubmit}>
+					<p className="max-w-prose mb-1.5">
+						<CustomSpan>confirm</CustomSpan> toast type&apos;s button alignment also changes. See
+						below.
+					</p>
 					<ItalicText>Example:</ItalicText>
+					<CodeBlock
+						codeString={codeStringConfirm}
+						language={"jsx"}
+					/>
 					{/* toast default */}
 					<RadioGroupComponent
 						labelText="Select toast alignment for 'confirm'."
