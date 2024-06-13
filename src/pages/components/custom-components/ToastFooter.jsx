@@ -95,7 +95,7 @@ const ToastFooter = () => {
 			message: "Sure you want to delete this user?",
 			position: "center",
 			bg: "white",
-			transition: "zoom",
+			transition: "fade",
 			footer: "If you click 'confirm' this user will be permanently deleted. Like, forever from the database.",
 			align: "left",
 		});

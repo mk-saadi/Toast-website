@@ -14,12 +14,21 @@ const toastAlign = [
 	{ align: "right", name: "Right", message: "Toast text alignment from" },
 ];
 
+const toastAlignConfirm = [
+	{ alignC: "center", name: "Center/Default" },
+	{ alignC: "left", name: "Left" },
+	{ alignC: "right", name: "Right" },
+];
+
 const Align = () => {
 	const { toastMaster, hideToast } = useToast();
 	const [selected, setSelected] = useState(toastAlign[0]);
+	const [confirm, setConfirm] = useState(toastAlignConfirm[1]);
 
 	const message = selected.message;
 	const align = selected.align;
+
+	const alignConfirm = confirm.alignC;
 
 	const codeString = `toastMaster({
 	type: "infoWhite",
@@ -27,15 +36,34 @@ const Align = () => {
 	align: "${align}",
 })`;
 
+	const codeStringConfirm = `toastMaster({
+	type: "confirmDark",
+	message: "Are you sure you want to delete this user?",
+	footer: "This toast is using alignment '${alignConfirm}',
+	align: "${alignConfirm}",
+})`;
+
 	const toastHandler = (e) => {
 		e.preventDefault();
 
 		toastMaster({
-			type: "info",
+			type: "infoWhite",
 			message: `${message} '${align}'`,
 			transition: "down",
 			bg: "dark",
-			align: align,
+			align: alignConfirm,
+		});
+	};
+
+	const toastHandlerSubmit = async (e) => {
+		e.preventDefault();
+
+		toastMaster({
+			type: "confirmDark",
+			bg: "white",
+			message: "Sure you want to delete this user?",
+			footer: `This toast is using alignment '${alignConfirm}`,
+			align: alignConfirm,
 		});
 	};
 
@@ -48,50 +76,72 @@ const Align = () => {
 			</p>
 			<ItalicText classname={"mt-2"}>Example below:</ItalicText>
 
-			<CodeBlock
-				codeString={codeString}
-				language={"jsx"}
-			/>
+			<div className="flex flex-col gap-y-2.5">
+				<CodeBlock
+					codeString={codeString}
+					language={"jsx"}
+				/>
+				<form
+					onSubmit={toastHandler}
+					className="flex flex-col gap-y-4"
+				>
+					<div className="flex flex-row gap-x-8">
+						{/* toast default */}
+						<RadioGroupComponent
+							labelText="Select toast text alignment."
+							radioValue={selected}
+							setRadioValue={setSelected}
+							options={toastAlign}
+						/>
+					</div>
 
-			<form
-				onSubmit={toastHandler}
-				className="flex flex-col gap-y-4"
-			>
-				<div className="flex flex-row gap-x-8">
+					<p className="max-w-prose">
+						<small>
+							* if the text is invisible try changing the text color. It may have become
+							invisible due to the background color.
+							<br />
+							&quot;basic&quot; and &quot;confirm&quot; doesn&apos;t have &quot;White&quot; as
+							toast color. So leave the color to &quot;Default&quot; or &quot;Dark&quot;.
+						</small>
+					</p>
+
+					<div className="flex flex-col gap-x-4 lg:flex-row">
+						<Button
+							classname={"w-full"}
+							type={"submit"}
+						>
+							Pop
+						</Button>
+						<HideButton
+							clickAction={hideToast}
+							classname={"w-full"}
+						>
+							Hide
+						</HideButton>
+					</div>
+				</form>
+
+				<CodeBlock
+					codeString={codeStringConfirm}
+					language={"jsx"}
+				/>
+				<form onSubmit={toastHandlerSubmit}>
+					<ItalicText>Example:</ItalicText>
 					{/* toast default */}
 					<RadioGroupComponent
-						labelText="Select toast text alignment."
-						radioValue={selected}
-						setRadioValue={setSelected}
-						options={toastAlign}
+						labelText="Select toast alignment for 'confirm'."
+						radioValue={confirm}
+						setRadioValue={setConfirm}
+						options={toastAlignConfirm}
 					/>
-				</div>
-
-				<p className="max-w-prose">
-					<small>
-						* if the text is invisible try changing the text color. It may have become invisible
-						due to the background color.
-						<br />
-						&quot;basic&quot; and &quot;confirm&quot; doesn&apos;t have &quot;White&quot; as toast
-						color. So leave the color to &quot;Default&quot; or &quot;Dark&quot;.
-					</small>
-				</p>
-
-				<div className="flex flex-col gap-x-4 lg:flex-row">
 					<Button
 						classname={"w-full"}
 						type={"submit"}
 					>
 						Pop
 					</Button>
-					<HideButton
-						clickAction={hideToast}
-						classname={"w-full"}
-					>
-						Hide
-					</HideButton>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 	);
 };

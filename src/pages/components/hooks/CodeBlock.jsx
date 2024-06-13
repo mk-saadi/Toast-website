@@ -64,7 +64,6 @@ const CopyButton = ({ textToCopy, theme }) => {
 				bg: toastBgSuccess,
 				radius: radiusSuccess,
 				transition: "top",
-
 				position: "bottomLeft",
 				align: "left",
 			});
@@ -76,7 +75,6 @@ const CopyButton = ({ textToCopy, theme }) => {
 				bg: toastBgError,
 				radius: radiusError,
 				transition: "top",
-
 				position: "bottomLeft",
 				align: "left",
 			});

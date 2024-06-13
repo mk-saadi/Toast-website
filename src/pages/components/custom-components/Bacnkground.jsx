@@ -53,7 +53,6 @@ const Background = () => {
 		toastMaster({
 			type: tType + color,
 			message: message,
-
 			transition: "down",
 			bg: bg,
 		});
