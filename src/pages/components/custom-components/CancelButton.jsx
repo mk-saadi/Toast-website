@@ -27,6 +27,29 @@ const CancelButton = () => {
 
 	const codeString1 = `const { toastMaster, hideToast } = useToast();`;
 
+	const codeString2 = `toastMaster({	
+	type: "infoStayWhite",
+	message: "Message from Saber-san",
+	bg: "white",
+	transition: "top",
+	position: "bottomLeft",
+	footer: (
+		<p>
+			Saber san recommended you to watch{" "}
+			<a
+				className="text-blue-500 underline cursor-pointer"
+				onClick={hideToast}
+				href="#"
+			>
+				&apos;Frieren: Beyond journeys end&apos;
+			</a>
+		</p>
+	),
+	radius: "xl",
+	shadow: "info",
+	align: "left",
+})`;
+
 	const handleToast = (e) => {
 		e.preventDefault();
 
@@ -38,6 +61,33 @@ const CancelButton = () => {
 			position: "top",
 			cancelButton: selected.value,
 			footer: "You can cancel this toast by clicking on the cancel button. Else this toast won't disappear automatically.",
+		});
+	};
+
+	const handleToast1 = (e) => {
+		e.preventDefault();
+
+		toastMaster({
+			type: "infoStay",
+			message: "Message from Saber-san",
+			bg: "white",
+			transition: "top",
+			position: "bottomLeft",
+			footer: (
+				<p>
+					Saber san recommended you to watch{" "}
+					<a
+						className="text-blue-500 underline cursor-pointer"
+						onClick={hideToast}
+						href="#"
+					>
+						&apos;Frieren: Beyond journeys end&apos;
+					</a>
+				</p>
+			),
+			radius: "xl",
+			shadow: "info",
+			align: "left",
 		});
 	};
 
@@ -84,16 +134,45 @@ const CancelButton = () => {
 			</form>
 
 			<div className="mt-4">
-				<p>
-					You can destructure <CustomSpan>hideToast</CustomSpan> when you import useToast(). You can
-					use it to hide the toast after a certain action.
-				</p>
-
 				<ItalicText>Destructure hideToast:</ItalicText>
 				<CodeBlock
 					codeString={codeString1}
 					language={"jsx"}
 				/>
+
+				<p>
+					You can destructure <CustomSpan>hideToast</CustomSpan> when you import useToast(). You can
+					use it to hide the toast after a certain action.
+				</p>
+
+				<ItalicText classname={"mt-2"}>Example below:</ItalicText>
+				<CodeBlock
+					codeString={codeString2}
+					language={"jsx"}
+				/>
+
+				<div className="flex flex-col gap-x-4 lg:flex-row">
+					<Button
+						clickAction={handleToast1}
+						type={"button"}
+						classname={"w-full"}
+					>
+						Pop
+					</Button>
+					<HideButton
+						clickAction={hideToast}
+						classname={"w-full"}
+					>
+						Hide
+					</HideButton>
+				</div>
+
+				<div className="mt-4">
+					<p>
+						In the above example we are using <CustomSpan>hideToast</CustomSpan> after redirecting
+						user to a different website. You get the idea.
+					</p>
+				</div>
 			</div>
 		</div>
 	);
