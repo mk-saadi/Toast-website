@@ -13,6 +13,7 @@ import Transition from "./components/custom-components/Transition";
 import ToastFooter from "./components/custom-components/ToastFooter";
 import CancelButton from "./components/custom-components/CancelButton";
 import Align from "./components/custom-components/Align";
+import Shadows from "./components/custom-components/Shadows";
 
 const ToastCustom = () => {
 	useScrollToTop();
@@ -76,7 +77,7 @@ const ToastCustom = () => {
 					<CustomLink />
 				</>
 
-				<div className="flex flex-col gap-y-36">
+				<div className="flex flex-col gap-y-28">
 					<>
 						<ToastColor />
 					</>
@@ -97,6 +98,9 @@ const ToastCustom = () => {
 					</>
 					<>
 						<CancelButton />
+					</>
+					<>
+						<Shadows />
 					</>
 				</div>
 

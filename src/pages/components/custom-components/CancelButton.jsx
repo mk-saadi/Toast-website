@@ -28,7 +28,7 @@ const CancelButton = () => {
 	const codeString1 = `const { toastMaster, hideToast } = useToast();`;
 
 	const codeString2 = `toastMaster({	
-	type: "infoStayWhite",
+	type: "infoStay",
 	message: "Message from Saber-san",
 	bg: "white",
 	transition: "top",
@@ -41,7 +41,7 @@ const CancelButton = () => {
 				onClick={hideToast}
 				href="#"
 			>
-				&apos;Frieren: Beyond journeys end&apos;
+				&quot;Fate/strange Fake&quot;
 			</a>
 		</p>
 	),
@@ -68,7 +68,7 @@ const CancelButton = () => {
 		e.preventDefault();
 
 		toastMaster({
-			type: "infoStay",
+			type: "infoStayDark",
 			message: "Message from Saber-san",
 			bg: "white",
 			transition: "top",
@@ -81,12 +81,12 @@ const CancelButton = () => {
 						onClick={hideToast}
 						href="#"
 					>
-						&apos;Frieren: Beyond journeys end&apos;
+						&quot;Fate/strange Fake&quot;
 					</a>
 				</p>
 			),
 			radius: "xl",
-			shadow: "info",
+			shadow: "dark",
 			align: "left",
 		});
 	};
