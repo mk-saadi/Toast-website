@@ -14,6 +14,7 @@ import ToastFooter from "./components/custom-components/ToastFooter";
 import CancelButton from "./components/custom-components/CancelButton";
 import Align from "./components/custom-components/Align";
 import Shadows from "./components/custom-components/Shadows";
+import Radius from "./components/custom-components/Radius";
 
 const ToastCustom = () => {
 	useScrollToTop();
@@ -101,6 +102,9 @@ const ToastCustom = () => {
 					</>
 					<>
 						<Shadows />
+					</>
+					<>
+						<Radius />
 					</>
 				</div>
 

@@ -8,31 +8,28 @@ import HideButton from "../hooks/HideButton";
 import CodeBlock from "../hooks/CodeBlock";
 import { useToast } from "react-toast-master";
 
-const toastShadows = [
-	{ shadow: "none", name: "none", type: "infoDark" },
-	{ shadow: "around", name: "around", type: "infoDark" },
-	{ shadow: "gray", name: "gray/default", type: "infoDark" },
-	{ shadow: "block", name: "block", type: "infoDark" },
-	{ shadow: "dark", name: "dark", type: "infoDark" },
-	{ shadow: "white", name: "white", type: "infoDark" },
-	{ shadow: "success", name: "success", type: "success" },
-	{ shadow: "error", name: "error", type: "error" },
-	{ shadow: "info", name: "info", type: "info" },
-	{ shadow: "warning", name: "warning", type: "warning" },
+const toastBorder = [
+	{ border: "none", name: "none" },
+	{ border: "sm", name: "sm" },
+	{ border: "md", name: "md" },
+	{ border: "lg", name: "lg" },
+	{ border: "xl", name: "xl" },
+	{ border: "twoXl", name: "twoXl" },
+	{ border: "full", name: "full" },
 ];
 
-const Shadows = () => {
+const Radius = () => {
 	const { toastMaster, hideToast } = useToast();
-	const [selected, setSelected] = useState(toastShadows[0]);
+	const [selected, setSelected] = useState(toastBorder[0]);
 
-	const shadow = selected.shadow;
+	const border = selected.border;
 	const type = selected.type;
 
 	const codeString = `toastMaster({
 	type: "${type}",
-	message: "This toast is using shadow '${shadow}'",
+	message: "Toast's border radius is '${border}'",
 	bg: "white",
-	shadow: "${shadow}"
+	radius: "${border}"
 })`;
 
 	const toastHandler = (e) => {
@@ -40,18 +37,19 @@ const Shadows = () => {
 
 		toastMaster({
 			type: type,
-			message: `This toast is using shadow '${shadow}'`,
+			message: `Toast's border radius is '${border}'`,
 			transition: "down",
 			bg: "white",
-			shadow: shadow,
+			radius: border,
 		});
 	};
 
 	return (
-		<div id="shadow">
-			<Hei2 classname={"mb-2"}># Toast Shadows:</Hei2>
+		<div id="radius">
+			<Hei2 classname={"mb-2"}># Toast Border Radius:</Hei2>
 			<p>
-				Choose the shadow best suited for your toast. The default is <CustomSpan>gray</CustomSpan>
+				Choose the border radius best suited for your toast. The default is{" "}
+				<CustomSpan>lg</CustomSpan>
 			</p>
 			<ItalicText classname={"mt-2"}>Example below:</ItalicText>
 
@@ -65,7 +63,7 @@ const Shadows = () => {
 					labelText="Select toast shadow."
 					radioValue={selected}
 					setRadioValue={setSelected}
-					options={toastShadows}
+					options={toastBorder}
 				/>
 			</div>
 			<div className="flex flex-col gap-x-4 lg:flex-row">
@@ -87,4 +85,4 @@ const Shadows = () => {
 	);
 };
 
-export default Shadows;
+export default Radius;
