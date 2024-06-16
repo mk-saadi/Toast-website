@@ -9,13 +9,15 @@ import HideButton from "../hooks/HideButton";
 import CodeBlock from "../hooks/CodeBlock";
 
 const toastPG = [
-	{ name: "top", message: "Toast from " },
-	{ name: "topLeft", message: "Toast from " },
-	{ name: "topRight", message: "Toast from " },
-	{ name: "bottom", message: "Toast from " },
-	{ name: "bottomLeft", message: "Toast from " },
-	{ name: "bottomRight", message: "Toast from " },
-	{ name: "center", message: "Toast from " },
+	{ name: "top", message: "Toast from ", radius: "lg", animation: "down" },
+	{ name: "topLeft", message: "Toast from ", radius: "lg", animation: "zoom" },
+	{ name: "topRight", message: "Toast from ", radius: "lg", animation: "zoom" },
+	{ name: "bottom", message: "Toast from ", radius: "lg", animation: "top" },
+	{ name: "bottomLeft", message: "Toast from ", radius: "lg", animation: "zoom" },
+	{ name: "bottomRight", message: "Toast from ", radius: "lg", animation: "zoom" },
+	{ name: "center", message: "Toast from ", radius: "lg", animation: "zoom" },
+	{ name: "topFull", message: "Toast from ", radius: "none", animation: "down" },
+	{ name: "bottomFull", message: "Toast from ", radius: "none", animation: "top" },
 ];
 
 const Position = () => {
@@ -24,6 +26,8 @@ const Position = () => {
 
 	const pg = selectedPG.name;
 	const message = selectedPG.message;
+	const radius = selectedPG.radius;
+	const animation = selectedPG.animation;
 
 	const codeString = `toastMaster({
   type: "info",
@@ -39,8 +43,8 @@ const Position = () => {
 			message: `${message}"${pg}"`,
 			position: pg,
 			bg: "white",
-
-			transition: "zoom",
+			transition: animation,
+			radius: radius,
 		});
 	};
 
