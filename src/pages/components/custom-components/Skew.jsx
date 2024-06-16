@@ -9,46 +9,48 @@ import CodeBlock from "../hooks/CodeBlock";
 import { useToast } from "react-toast-master";
 
 const toastBorder = [
-	{ border: "none", name: "none" },
-	{ border: "sm", name: "sm" },
-	{ border: "md", name: "md" },
-	{ border: "lg", name: "lg" },
-	{ border: "xl", name: "xl" },
-	{ border: "twoXl", name: "twoXl" },
-	{ border: "full", name: "full" },
+	{ skew: "none", name: "none" },
+	{ skew: "three", name: "three" },
+	{ skew: "six", name: "six" },
+	{ skew: "twelve", name: "twelve" },
 ];
 
-const Radius = () => {
+const Skew = () => {
 	const { toastMaster, hideToast } = useToast();
-	const [selected, setSelected] = useState(toastBorder[0]);
+	const [selected, setSelected] = useState(toastBorder[2]);
 
-	const border = selected.border;
+	const skew = selected.skew;
 
 	const codeString = `toastMaster({
-	type: "infoDark",
-	message: "Toast's border radius is '${border}'",
-	bg: "white",
-	radius: "${border}"
+	type: "errorWhite",
+	message: "Special property skew.",
+	bg: "dark",
+	skew: "${skew}",
+  shadow: "dark",
+  footer: "Toast's skew value is '${skew}'"
 })`;
 
 	const toastHandler = (e) => {
 		e.preventDefault();
 
 		toastMaster({
-			type: "infoDark",
-			message: `Toast's border radius is "${border}"`,
+			type: "errorWhite",
+			message: "Special property skew.",
 			transition: "down",
-			bg: "white",
-			radius: border,
+			bg: "dark",
+			skew: skew,
+			radius: "none",
+			shadow: "dark",
+			footer: `Toast's skew value is "${skew}"`,
 		});
 	};
 
 	return (
-		<div id="radius">
-			<Hei2 classname={"mb-2"}># Toast Border Radius:</Hei2>
+		<div id="skew">
+			<Hei2 classname={"mb-2"}># Toast Skew:</Hei2>
 			<p>
-				Choose the border radius best suited for your toast. The default is{" "}
-				<CustomSpan>lg</CustomSpan>
+				Special property skew. Choose the skew value best suited for your toast. The default is{" "}
+				<CustomSpan>none</CustomSpan>
 			</p>
 			<ItalicText classname={"mt-2"}>Example below:</ItalicText>
 
@@ -65,6 +67,13 @@ const Radius = () => {
 					options={toastBorder}
 				/>
 			</div>
+
+			<p className="max-w-prose">
+				<small>
+					* if you don&apos;t want your toast to have a skew value then don&apos;t define it.
+				</small>
+			</p>
+
 			<div className="flex flex-col gap-x-4 lg:flex-row">
 				<Button
 					classname={"w-full"}
@@ -84,4 +93,4 @@ const Radius = () => {
 	);
 };
 
-export default Radius;
+export default Skew;

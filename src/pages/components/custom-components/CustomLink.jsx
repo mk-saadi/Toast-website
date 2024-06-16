@@ -41,6 +41,10 @@ const CustomLink = () => {
 				<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
 				<a href="#skew">Skew</a>
 			</li>
+			<li className="flex items-center justify-start gap-x-1 group">
+				<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
+				<a href="#extra">Extra</a>
+			</li>
 		</ul>
 	);
 };

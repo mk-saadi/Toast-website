@@ -6,8 +6,6 @@ import ToastColor from "./components/custom-components/TextColor";
 import Background from "./components/custom-components/Bacnkground";
 import CustomLink from "./components/custom-components/CustomLink";
 import Hei2 from "./components/hooks/Hei2";
-import { useToast } from "react-toast-master";
-import { useTheme } from "./ThemeProvider";
 import Position from "./components/custom-components/Position";
 import Transition from "./components/custom-components/Transition";
 import ToastFooter from "./components/custom-components/ToastFooter";
@@ -15,6 +13,8 @@ import CancelButton from "./components/custom-components/CancelButton";
 import Align from "./components/custom-components/Align";
 import Shadows from "./components/custom-components/Shadows";
 import Radius from "./components/custom-components/Radius";
+import Skew from "./components/custom-components/Skew";
+import Extra from "./components/custom-components/Extra";
 
 const ToastCustom = () => {
 	useScrollToTop();
@@ -35,34 +35,6 @@ const ToastCustom = () => {
 		window.addEventListener("hashchange", handleHashChange, false);
 		return () => window.removeEventListener("hashchange", handleHashChange, false);
 	}, []);
-
-	const theme = useTheme();
-	const { toastMaster } = useToast();
-
-	const showToast = () => {
-		let toastType, toastBg, radius, message;
-
-		if (theme === "nord") {
-			toastType = "basic";
-			toastBg = "dark";
-			radius = "md";
-			message = "Quote from the abyss.";
-		} else if (theme === "sunset") {
-			toastType = "infoWhite";
-			toastBg = "gray";
-			radius = "sm";
-			message = "Positive quote";
-		}
-
-		toastMaster({
-			type: toastType,
-			message: message,
-			bg: toastBg,
-			radius: radius,
-			transition: "down",
-			footer: "Hello darkness my old friend",
-		});
-	};
 
 	return (
 		<div
@@ -106,10 +78,12 @@ const ToastCustom = () => {
 					<>
 						<Radius />
 					</>
-				</div>
-
-				<div>
-					<button onClick={showToast}>Show Toast</button>
+					<>
+						<Skew />
+					</>
+					<>
+						<Extra />
+					</>
 				</div>
 
 				<div className="flex justify-between w-full">

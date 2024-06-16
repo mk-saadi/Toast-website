@@ -75,7 +75,7 @@ const Transition = () => {
 
 				<p className="max-w-prose">
 					<small>
-						* You have to tweak the toast transition based on your toast position. Certain
+						* you have to tweak the toast transition based on your toast position. Certain
 						transitions might not be suited for all toast positions.
 					</small>
 				</p>

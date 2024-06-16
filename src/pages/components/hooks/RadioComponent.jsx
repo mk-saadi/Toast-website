@@ -35,7 +35,7 @@ const RadioGroupComponent = ({ labelText, radioValue, setRadioValue, options }) 
 											<div className="flex items-center">
 												<RadioGroup.Label
 													as="p"
-													className="font-medium"
+													className="font-medium lowercase"
 													style={{
 														color: checked
 															? "var(--text-color-dark-dark)"
