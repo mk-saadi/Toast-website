@@ -33,13 +33,14 @@ const Position = () => {
   type: "info",
   position: "${pg}",
   message: "${message}'${pg}'",
+  transition: "${animation}",
 })`;
 
 	const handlePG = (e) => {
 		e.preventDefault();
 
 		toastMaster({
-			type: "info",
+			type: "infoStay",
 			message: `${message}"${pg}"`,
 			position: pg,
 			bg: "white",

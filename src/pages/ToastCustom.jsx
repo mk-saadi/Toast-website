@@ -44,11 +44,16 @@ const ToastCustom = () => {
 			<Hbreads>Toast Customizations</Hbreads>
 
 			<Hei2>Toast Customizations</Hei2>
+			<p className="mb-4">
+				There are many ways you can Customize you toast component. Read the full document below to
+				understand how you can customize it.
+			</p>
 
 			<div className="flex flex-col gap-y-14">
-				<>
+				<div className="flex flex-col gap-y-1.5">
+					<p>Click to jump to specific component</p>
 					<CustomLink />
-				</>
+				</div>
 
 				<div className="flex flex-col gap-y-28">
 					<>
