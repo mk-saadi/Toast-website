@@ -43,32 +43,6 @@ const ToastTypes = () => {
 					<Hei2>All Toast Types</Hei2>
 
 					<p>Types of Toast available in the Toast package:</p>
-					<ul className="ml-4 w-fit">
-						<li className="flex items-center justify-start gap-x-1 group">
-							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
-							<a href="#success">Success</a>
-						</li>
-						<li className="flex items-center justify-start gap-x-1 group">
-							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
-							<a href="#error">Error</a>
-						</li>
-						<li className="flex items-center justify-start gap-x-1 group">
-							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
-							<a href="#info">Info</a>
-						</li>
-						<li className="flex items-center justify-start gap-x-1 group">
-							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
-							<a href="#warning">Warning</a>
-						</li>
-						<li className="flex items-center justify-start gap-x-1 group">
-							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
-							<a href="#basic">Basic</a>
-						</li>
-						<li className="flex items-center justify-start gap-x-1 group">
-							<span className="duration-200 opacity-50 group-hover:opacity-100">#</span>
-							<a href="#confirm">Confirm</a>
-						</li>
-					</ul>
 				</div>
 
 				<div>

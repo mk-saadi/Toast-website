@@ -16,7 +16,7 @@ const toastType = [
 		name: "confirm",
 		message: "Are you sure you want to delete your enemies?",
 		align: "left",
-		innerFooter: <p>If you delete, it will be "THE END" for them.</p>,
+		innerFooter: <p>If you delete, it will be &quot;THE END&quot; for them.</p>,
 	},
 ];
 
@@ -40,16 +40,6 @@ const TypeExample = () => {
 			footer: footer,
 		});
 	};
-
-	// const foot = async () => {
-	// 	const confirm = await toastMaster({
-	// 		type: "confirm",
-	// 		bg: "dark",
-	// 		message: "Are you sure you want to delete your enemies?",
-	// 		footer: <p>Once you delete them, it will be "THE END" for them.</p>,
-	// 		align: "left",
-	// 	});
-	// };
 
 	return (
 		<>
@@ -107,19 +97,21 @@ const TypeExample = () => {
 					</div>
 				</div>
 
-				<Button
-					classname={"w-full"}
-					type={"submit"}
-				>
-					Pop
-				</Button>
+				<div className="flex items-center justify-center w-full gap-4 lg:flex-row">
+					<Button
+						classname={"w-full"}
+						type={"submit"}
+					>
+						Pop
+					</Button>
+					<HideButton
+						classname={"w-full"}
+						clickAction={hideToast}
+					>
+						Hide
+					</HideButton>
+				</div>
 			</form>
-			<HideButton
-				classname={"w-full mt-2"}
-				clickAction={hideToast}
-			>
-				Hide
-			</HideButton>
 		</>
 	);
 };
