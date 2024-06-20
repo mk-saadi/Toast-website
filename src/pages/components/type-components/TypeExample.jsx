@@ -3,6 +3,8 @@ import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import HideButton from "../hooks/HideButton";
 import Button from "../hooks/Button";
+import RadioGroupComponent from "../hooks/RadioComponent";
+import CodeBlock from "../hooks/CodeBlock";
 
 const toastType = [
 	{ type: "success", name: "success", message: "Code compiled successfully." },
@@ -16,7 +18,7 @@ const toastType = [
 		name: "confirm",
 		message: "Are you sure you want to delete your enemies?",
 		align: "left",
-		innerFooter: <p>If you delete, it will be &quot;THE END&quot; for them.</p>,
+		innerFooter: "If you delete, it will be 'THE END' for them.",
 	},
 ];
 
@@ -28,6 +30,12 @@ const TypeExample = () => {
 	const message = selected.message;
 	const align = selected.align;
 	const footer = selected.innerFooter;
+
+	const codeString = `toastMaster({
+    type: "${types}",
+    message: "${message}",
+    bg: "white",
+})`;
 
 	const toastHandler = (e) => {
 		e.preventDefault();
@@ -43,75 +51,42 @@ const TypeExample = () => {
 
 	return (
 		<>
-			<form onSubmit={toastHandler}>
-				<div className="overflow-hidden w-fit">
-					<label
-						className="block text-base font-semibold leading-6"
-						style={{ color: "var(--text-color-dark-white)" }}
-					>
-						Select a toast Type.
-					</label>
-					<div className="w-full mx-auto mt-2">
-						<RadioGroup
-							value={selected}
-							onChange={setSelected}
-						>
-							<RadioGroup.Label className="sr-only">toast type</RadioGroup.Label>
-							<div className="flex flex-row flex-wrap w-full gap-2">
-								{toastType.map((plan) => (
-									<RadioGroup.Option
-										key={plan.type}
-										value={plan}
-										className={({ checked }) =>
-											`${checked ? "bg-accent" : " bg-slate-700/10"}
-                                                relative flex cursor-pointer px-2 w-fit outline-none`
-										}
-										style={{
-											borderRadius: "var(--borderRadius)",
-											border: "1px solid var(--border-gray)",
-										}}
-									>
-										{({ checked }) => (
-											<>
-												<div className="flex items-center justify-between w-full">
-													<div className="flex items-center">
-														<RadioGroup.Label
-															as="p"
-															className="font-medium"
-															style={{
-																color: checked
-																	? "var(--text-color-dark-dark)"
-																	: "var(--text-color-dark-white)",
-															}}
-														>
-															{plan.name}
-														</RadioGroup.Label>
-													</div>
-												</div>
-											</>
-										)}
-									</RadioGroup.Option>
-								))}
-							</div>
-						</RadioGroup>
-					</div>
-				</div>
+			<div className="w-full overflow-hidden">
+				<CodeBlock
+					codeString={codeString}
+					language={"jsx"}
+				/>
 
-				<div className="flex items-center justify-center w-full gap-4 lg:flex-row">
-					<Button
-						classname={"w-full"}
-						type={"submit"}
-					>
-						Pop
-					</Button>
-					<HideButton
-						classname={"w-full"}
-						clickAction={hideToast}
-					>
-						Hide
-					</HideButton>
-				</div>
-			</form>
+				<RadioGroupComponent
+					labelText="Select a toast type."
+					radioValue={selected}
+					setRadioValue={setSelected}
+					options={toastType}
+				/>
+			</div>
+
+			<p className="mt-4 max-w-prose">
+				<small>
+					* all toast&apos;s are in their primary color. Different toast colors are explored in the
+					next page.
+				</small>
+			</p>
+
+			<div className="flex flex-col mt-4 gap-x-4 lg:flex-row">
+				<Button
+					classname={"w-full"}
+					type={"submit"}
+					clickAction={toastHandler}
+				>
+					Pop
+				</Button>
+				<HideButton
+					clickAction={hideToast}
+					classname={"w-full"}
+				>
+					Hide
+				</HideButton>
+			</div>
 		</>
 	);
 };

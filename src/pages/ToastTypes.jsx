@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Hbreads from "./components/hooks/Hbreads";
 import Hei2 from "./components/hooks/Hei2";
 import useScrollToTop from "./components/hooks/useScrollToTop";
@@ -13,23 +12,6 @@ import HideButton from "./components/hooks/HideButton";
 const ToastTypes = () => {
 	useScrollToTop();
 
-	useEffect(() => {
-		const handleHashChange = () => {
-			const id = window.location.hash.replace("#", "");
-			if (id) {
-				const element = document.getElementById(id);
-				if (element) {
-					const yOffset = -40;
-					const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-					window.scrollTo({ top: y, behavior: "smooth" });
-				}
-			}
-		};
-
-		window.addEventListener("hashchange", handleHashChange, false);
-		return () => window.removeEventListener("hashchange", handleHashChange, false);
-	}, []);
-
 	return (
 		<div
 			className="flex flex-col min-h-screen"
@@ -42,58 +24,14 @@ const ToastTypes = () => {
 				<div>
 					<Hei2>All Toast Types</Hei2>
 
-					<p>Types of Toast available in the Toast package:</p>
-				</div>
+					<p className="mt-1 mb-8">
+						All common toast types are available including &quot;confirm&quot; toast type. Check
+						the example below.
+					</p>
 
-				<div>
-					<ItalicText>Example</ItalicText>
-
+					<ItalicText>Example below:</ItalicText>
 					<TypeExample />
 				</div>
-
-				{/* <div>
-					<div
-						className="offset-anchor"
-						id="success"
-					>
-						<Success />
-					</div>
-
-					<div
-						className="offset-anchor"
-						id="error"
-					>
-						<ItalicText>Toast Type: Error</ItalicText>
-					</div>
-
-					<div
-						className="offset-anchor"
-						id="info"
-					>
-						<ItalicText>Toast Type: Info</ItalicText>
-					</div>
-
-					<div
-						className="offset-anchor"
-						id="warning"
-					>
-						<ItalicText>Toast Type: Warning</ItalicText>
-					</div>
-
-					<div
-						className="offset-anchor"
-						id="basic"
-					>
-						<ItalicText>Toast Type: Basic</ItalicText>
-					</div>
-
-					<div
-						className="offset-anchor mb-96"
-						id="confirm"
-					>
-						<ItalicText>Toast Type: Confirm</ItalicText>
-					</div>
-				</div> */}
 
 				<div className="flex justify-between w-full">
 					<ToastTypesRoutes />
