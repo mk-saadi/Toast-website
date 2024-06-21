@@ -8,6 +8,7 @@ import CodeBlock from "./components/hooks/CodeBlock";
 import Button from "./components/hooks/Button";
 import TypeExample from "./components/type-components/TypeExample";
 import HideButton from "./components/hooks/HideButton";
+import Confirm from "./components/type-components/Confirm";
 
 const ToastTypes = () => {
 	useScrollToTop();
@@ -29,8 +30,10 @@ const ToastTypes = () => {
 						the example below.
 					</p>
 
-					<ItalicText>Example below:</ItalicText>
-					<TypeExample />
+					<div className="flex flex-col gap-y-28">
+						<TypeExample />
+						<Confirm />
+					</div>
 				</div>
 
 				<div className="flex justify-between w-full">
