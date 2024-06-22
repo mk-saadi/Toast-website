@@ -1,9 +1,9 @@
 import Button from "../hooks/Button";
-// import CodeBlock from "../hooks/CodeBlock";
 import ItalicText from "../hooks/ItalicText";
 import CodeBlock from "../hooks/CodeBlock";
 import { useToast } from "react-toast-master";
 import endImg from "../../../assets/end.png";
+import CustomSpan from "../hooks/Highlight";
 
 const Confirm = () => {
 	const { toastMaster } = useToast();
@@ -92,6 +92,18 @@ const Confirm = () => {
 				>
 					Pop
 				</Button>
+			</div>
+
+			<div className="mt-4">
+				<p>
+					Above is an example of how you can use the confirm toast. You must use the{" "}
+					<CustomSpan>await</CustomSpan> keyword for the toast to work.
+					<br />
+					The variable confirm stores the user&apos;s choice (boolean, <CustomSpan>
+						true
+					</CustomSpan>{" "}
+					for &quot;Confirm&quot;, <CustomSpan>false</CustomSpan> for &quot;Cancel&quot;)
+				</p>
 			</div>
 		</div>
 	);

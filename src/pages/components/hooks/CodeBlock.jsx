@@ -10,7 +10,7 @@ const CodeBlock = ({ codeString, language }) => {
 	const codeTheme = theme === "sunset" ? oneLight : oneDark;
 
 	return (
-		<div className="relative group">
+		<div className="relative overflow-y-auto group max-h-[28rem]">
 			<SyntaxHighlighter
 				language={language}
 				style={codeTheme}
@@ -31,38 +31,15 @@ const CopyButton = ({ textToCopy, theme }) => {
 	const [isCopied, setIsCopied] = useState(false);
 	const { toastMaster } = useToast();
 
-	let toastTypeSuccess, toastBgSuccess, radiusSuccess;
-	let toastTypeError, toastBgError, radiusError;
-
-	if (theme === "nord") {
-		toastTypeSuccess = "successWhite";
-		toastBgSuccess = "glass";
-		radiusSuccess = "md";
-	} else if (theme === "sunset") {
-		toastTypeSuccess = "successDark";
-		toastBgSuccess = "glass";
-		radiusSuccess = "sm";
-	}
-
-	if (theme === "nord") {
-		toastTypeError = "errorWhite";
-		toastBgError = "glass";
-		radiusError = "md";
-	} else if (theme === "sunset") {
-		toastTypeError = "errorDark";
-		toastBgError = "glass";
-		radiusError = "sm";
-	}
-
 	const handleCopy = async () => {
 		try {
 			await navigator.clipboard.writeText(textToCopy);
 			setIsCopied(true);
 			toastMaster({
-				type: toastTypeSuccess,
+				type: "successDark",
 				message: "Copied!",
-				bg: toastBgSuccess,
-				radius: radiusSuccess,
+				bg: "white",
+				radius: "lg",
 				transition: "top",
 				position: "bottomLeft",
 				align: "left",
@@ -70,10 +47,10 @@ const CopyButton = ({ textToCopy, theme }) => {
 			setTimeout(() => setIsCopied(false), 1500);
 		} catch (err) {
 			toastMaster({
-				type: toastTypeError,
+				type: "errorDark",
 				message: "Failed to copy",
-				bg: toastBgError,
-				radius: radiusError,
+				bg: "white",
+				radius: "none",
 				transition: "top",
 				position: "bottomLeft",
 				align: "left",
@@ -83,7 +60,7 @@ const CopyButton = ({ textToCopy, theme }) => {
 
 	return (
 		<p
-			className="absolute top-2.5 right-2.5"
+			className="absolute top-[1.2rem] right-2.5"
 			style={{ color: "var(--text-color-dark-white)" }}
 		>
 			{isCopied ? (
