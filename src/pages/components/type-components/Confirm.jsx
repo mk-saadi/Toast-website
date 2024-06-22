@@ -77,6 +77,10 @@ const Confirm = () => {
 	return (
 		<div>
 			<ItalicText>Confirm toast Example below:</ItalicText>
+			<p>
+				Above is an example of how you can use the confirm toast. You must use the{" "}
+				<CustomSpan>await</CustomSpan> keyword for the toast to work.
+			</p>
 			<div className="w-full overflow-hidden">
 				<CodeBlock
 					codeString={codeString}
@@ -95,15 +99,40 @@ const Confirm = () => {
 			</div>
 
 			<div className="mt-4">
-				<p>
-					Above is an example of how you can use the confirm toast. You must use the{" "}
-					<CustomSpan>await</CustomSpan> keyword for the toast to work.
-					<br />
-					The variable confirm stores the user&apos;s choice (boolean, <CustomSpan>
-						true
-					</CustomSpan>{" "}
-					for &quot;Confirm&quot;, <CustomSpan>false</CustomSpan> for &quot;Cancel&quot;)
-				</p>
+				<ul className="list-disc">
+					<li>
+						The <CustomSpan>await</CustomSpan> keyword makes the code wait for the user’s
+						response.
+					</li>
+					<li>
+						If the user clicks the confirmation button (e.g., &quot;Confirm&quot;), the confirm
+						variable becomes <CustomSpan>true</CustomSpan>.
+					</li>
+					<li>
+						If the user clicks the cancel button (e.g., &quot;Cancel&quot;), the confirm variable
+						becomes <CustomSpan>false</CustomSpan>.
+					</li>
+					<li>
+						If confirm is true (meaning the user confirmed), the code proceeds to the next step.
+						If confirm is false (meaning the user canceled), nothing further happens.
+					</li>
+					<li>
+						Deleting Data (Simulated): Inside the if (confirm) block, the code simulates data
+						deletion.
+					</li>
+					<li>
+						It shows a &quot;loading&quot; toast with the message &quot;Deleting…&quot; and a
+						downward transition animation.
+					</li>
+					<li>
+						After a delay (simulated by setTimeout), it shows a &quot;success&quot; toast with the
+						message &quot;Your data have been deleted.&quot;
+					</li>
+					<li>
+						The footer of the &quot;success&quot; toast includes an image (represented by the img
+						tag).
+					</li>
+				</ul>
 			</div>
 		</div>
 	);
