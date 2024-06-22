@@ -51,7 +51,7 @@ const Align = () => {
 			message: `${message} '${align}'`,
 			transition: "down",
 			bg: "dark",
-			align: alignConfirm,
+			align: align,
 		});
 	};
 

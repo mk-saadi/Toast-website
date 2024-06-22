@@ -1,63 +1,86 @@
-import { useState } from "react";
-import HideButton from "../hooks/HideButton";
 import Button from "../hooks/Button";
-import RadioGroupComponent from "../hooks/RadioComponent";
 // import CodeBlock from "../hooks/CodeBlock";
 import ItalicText from "../hooks/ItalicText";
 import CodeBlock from "../hooks/CodeBlock";
 import { useToast } from "react-toast-master";
-
-const confirmType = [
-	{
-		type: "confirmDark",
-		name: "confirm",
-		message: "Are you sure you want to delete your enemies?",
-		align: "left",
-		innerFooter: "If you delete, it will be 'THE END' for them.",
-	},
-];
+import endImg from "../../../assets/end.png";
 
 const Confirm = () => {
-	const { toastMaster, hideToast } = useToast();
-	const [selected, setSelected] = useState(confirmType[0]);
+	const { toastMaster } = useToast();
 
-	const types = selected.type;
-	const message = selected.message;
-	const align = selected.align;
-	const footer = selected.innerFooter;
+	const codeString = `const toastHandler = async () => {
+	const confirm = await toastMaster({
+		type: "confirmDark",
+		message: "Are you sure you want to delete all your data?",
+		align: "left",
+		footer: "If you delete, it will be 'THE END' for them.",
+	});
 
-	const codeString = `toastMaster({
-    type: "${types}",
-    message: "${message}",
-    bg: "white",
-})`;
-
-	const toastHandler = (e) => {
-		e.preventDefault();
-
+	if (confirm) {
 		toastMaster({
-			type: types,
-			message: message,
+			type: "loadingDark",
+			message: "Deleting...",
 			transition: "down",
-			align: align,
-			footer: footer,
+			footer: "You can't recover your data now.",
 		});
+
+		setTimeout(() => {
+			toastMaster({
+				type: "success",
+				message: "Your data have been deleted.",
+				transition: "down",
+				footer: (
+					<img
+						src={endImg}
+						alt=""
+						className="h-auto w-28"
+					/>
+				),
+			});
+		}, 3000);
+	}
+};`;
+
+	const toastHandler = async () => {
+		const confirm = await toastMaster({
+			type: "confirmDark",
+			message: "Are you sure you want to delete all your data?",
+			align: "left",
+			footer: "If you delete, it will be 'THE END' for them.",
+		});
+
+		if (confirm) {
+			toastMaster({
+				type: "loadingDark",
+				message: "Deleting...",
+				transition: "down",
+				footer: "You can't recover your data now.",
+			});
+
+			setTimeout(() => {
+				toastMaster({
+					type: "successDark",
+					message: "Your data have been deleted.",
+					transition: "down",
+					footer: (
+						<img
+							src={endImg}
+							alt=""
+							className="h-auto w-28"
+						/>
+					),
+				});
+			}, 3000);
+		}
 	};
 
 	return (
 		<div>
-			<ItalicText>Example below:</ItalicText>
+			<ItalicText>Confirm toast Example below:</ItalicText>
 			<div className="w-full overflow-hidden">
 				<CodeBlock
 					codeString={codeString}
 					language={"jsx"}
-				/>
-
-				<RadioGroupComponent
-					labelText="Select a toast type."
-					radioValue={selected}
-					setRadioValue={setSelected}
-					options={confirmType}
 				/>
 			</div>
 
@@ -69,12 +92,6 @@ const Confirm = () => {
 				>
 					Pop
 				</Button>
-				<HideButton
-					clickAction={hideToast}
-					classname={"w-full"}
-				>
-					Hide
-				</HideButton>
 			</div>
 		</div>
 	);

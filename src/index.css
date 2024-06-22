@@ -44,6 +44,9 @@ body::before {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
 }
+/* * {
+	@apply transition-colors duration-150 ease-in;
+} */
 *::selection {
 	color: rgb(8, 8, 8);
 	background-color: rgb(111, 196, 249);
