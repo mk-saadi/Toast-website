@@ -1,17 +1,12 @@
 import Navbar from "./components/Navbar";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import classNames from "classnames";
 import SideNav from "./components/SideNav";
 import Footer from "./components/Footer";
-import { useEffect } from "react";
 import { useTheme } from "./ThemeProvider";
 
 const Layout = () => {
 	const theme = useTheme();
-	const navigate = useNavigate();
-	useEffect(() => {
-		navigate("/pages/introduction");
-	}, [navigate]);
 
 	return (
 		<div

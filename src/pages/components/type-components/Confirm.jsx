@@ -99,7 +99,7 @@ const Confirm = () => {
 			</div>
 
 			<div className="mt-4">
-				<ul className="list-disc">
+				<ul className="list-disc flex flex-col gap-y-1.5">
 					<li>
 						The <CustomSpan>await</CustomSpan> keyword makes the code wait for the user’s
 						response.
@@ -121,8 +121,8 @@ const Confirm = () => {
 						deletion.
 					</li>
 					<li>
-						It shows a &quot;loading&quot; toast with the message &quot;Deleting…&quot; and a
-						downward transition animation.
+						It shows a <CustomSpan>loading</CustomSpan> toast with the message
+						&quot;Deleting…&quot; and a downward transition animation.
 					</li>
 					<li>
 						After a delay (simulated by setTimeout), it shows a &quot;success&quot; toast with the

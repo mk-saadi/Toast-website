@@ -3,8 +3,8 @@ import NavigationLink from "../hooks/NavigationLink";
 const ToastCustomRoutes = () => {
 	return (
 		<NavigationLink
-			to={"/pages/toast-types"}
-			routeName={"/pages/Toast Types"}
+			to={"/toast-types"}
+			routeName={"/Toast Types"}
 			direction={"Previous"}
 		/>
 	);

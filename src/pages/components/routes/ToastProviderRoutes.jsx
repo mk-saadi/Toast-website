@@ -5,13 +5,13 @@ const ToastProviderRoutes = () => {
 		<>
 			<NavigationLink
 				direction={"Previous"}
-				to={"/pages/introduction"}
-				routeName={"/pages/introduction"}
+				to={"/"}
+				routeName={"/introduction"}
 			/>
 			<NavigationLink
 				direction={"Next"}
-				to={"/pages/toast-types"}
-				routeName={"/pages/Toast Types"}
+				to={"/toast-types"}
+				routeName={"/Toast Types"}
 			/>
 		</>
 	);

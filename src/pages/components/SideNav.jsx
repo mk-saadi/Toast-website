@@ -19,10 +19,10 @@ const SideNav = () => {
 		>
 			<ul className="pt-20 duration-200">
 				{[
-					["/pages/introduction", "Introduction"],
-					["/pages/toast-setup", "Toast Setup"],
-					["/pages/toast-types", "Toast Types"],
-					["/pages/toast-customizations", "Toast Customizations"],
+					["/", "Introduction"],
+					["/toast-setup", "Toast Setup"],
+					["/toast-types", "Toast Types"],
+					["/toast-customizations", "Toast Customizations"],
 				].map(([to, text]) => (
 					<li
 						key={to}

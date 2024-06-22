@@ -8,35 +8,30 @@ import Layout from "./pages/Layout";
 import Toast_Provider from "./pages/ToastProvider";
 import ToastTypes from "./pages/ToastTypes";
 import ToastCustom from "./pages/ToastCustom";
-import Toasts from "./pages/components/Toasts";
 import { ThemeProvider } from "./pages/ThemeProvider";
 
 const router = createBrowserRouter([
 	{
-		path: "/pages",
+		path: "/",
 		element: <Layout />,
 		children: [
 			{
-				path: "/pages/introduction",
+				path: "/",
 				element: <Home />,
 			},
 			{
-				path: "/pages/toast-setup",
+				path: "/toast-setup",
 				element: <Toast_Provider />,
 			},
 			{
-				path: "/pages/toast-types",
+				path: "/toast-types",
 				element: <ToastTypes />,
 			},
 			{
-				path: "/pages/toast-customizations",
+				path: "/toast-customizations",
 				element: <ToastCustom />,
 			},
 		],
-	},
-	{
-		path: "toasts",
-		element: <Toasts />,
 	},
 ]);
 

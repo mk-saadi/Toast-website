@@ -4,13 +4,13 @@ const ToastTypesRoutes = () => {
 	return (
 		<>
 			<NavigationLink
-				to={"/pages/toast-usage"}
-				routeName={"/pages/Toast Usage"}
+				to={"/toast-setup"}
+				routeName={"/Toast Setup"}
 				direction={"Previous"}
 			/>
 			<NavigationLink
-				to={"/pages/toast-customizations"}
-				routeName={"/pages/Toast Customizations"}
+				to={"/toast-customizations"}
+				routeName={"/Toast Customizations"}
 				direction={"Next"}
 			/>
 		</>

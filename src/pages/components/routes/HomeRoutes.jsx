@@ -3,8 +3,8 @@ import NavigationLink from "../hooks/NavigationLink";
 const HomeRoutes = () => {
 	return (
 		<NavigationLink
-			to={"/pages/toast-setup"}
-			routeName={"/pages/Toast setup"}
+			to={"/toast-setup"}
+			routeName={"/Toast setup"}
 			direction={"Next"}
 		/>
 	);
